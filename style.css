@@ -1,0 +1,7157 @@
+.mortgage-calculator {
+  box-sizing: border-box;
+  margin: 1em auto;
+  max-width: 1200px
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-calculator {
+    padding: 0 1em
+  }
+}
+
+.mortgage-calculator__cards--lesser-bottom-margin {
+  margin-bottom: 2em;
+}
+
+.mortgage-calculator__cards {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 6em;
+  margin-bottom: 6em;
+}
+
+.mortgage-calculator__card:first-child {
+  margin-left: 0;
+}
+
+.mortgage-calculator__card {
+  border: 1px solid #e0e0e0;
+  flex: 1 1 50%;
+  margin-left: 1.375em;
+  padding-right: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1.5em;
+}
+
+.card {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 0.25em;
+  padding: 1rem;
+}
+
+.mortgage-calculator__card--zero-side-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mortgage-calculator__card--spaced-out {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+
+.mortgage-calculator__card {
+  border: 1px solid #e0e0e0;
+  flex: 1 1 50%;
+  margin-left: 1.375em;
+  padding: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 1.5em;
+}
+
+.mortgage-calculator__intro {
+  margin: 1.5em 0;
+}
+
+.form__fields--horizontal {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form__fields {
+  display: flex;
+}
+
+.form__field:first-child {
+  margin-left: 0;
+}
+
+.form__field:last-child {
+  margin-right: 0;
+}
+
+.form__field--vertical {
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.form__field {
+  display: flex;
+  flex: 0 1 auto;
+  margin: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 0.5em;
+  position: relative;
+}
+
+.form__label-container--pseudo-content {
+  position: relative;
+}
+
+.form__label-container {
+  position: relative;
+  width: 100%;
+}
+
+.form__label-container--pseudo-content>.form__text-field {
+  padding-right: 4em;
+}
+
+.form__text-field {
+  -webkit-appearance: textfield;
+  appearance: textfield;
+  background-color: #fff;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  color: #212121;
+  font-size: 1em;
+  height: 3.25em;
+  line-height: 1;
+  outline: none;
+  padding: 1.25em 1em 0.1em;
+  padding-right: 1em;
+  width: 100%;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.form__label-text-field {
+  color: #757575;
+  cursor: text;
+  font-size: 75%;
+  left: 1.5em;
+  line-height: 1;
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  top: 0.75em;
+  transition: all 0.2s;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.mortgage-calculator__card-inner {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1.5em;
+  padding: 0 1.375em;
+}
+
+.mortgage-calculator__information-boxes {
+  display: flex;
+  margin-bottom: 1em;
+  min-height: 4.875em;
+}
+
+.mortgage-calculator__information-boxes:last-of-type {
+  margin-bottom: 0;
+}
+
+.mortgage-calculator__information-boxes {
+  display: flex;
+  margin-bottom: 1em;
+  min-height: 4.875em;
+}
+
+.mortgage-calculator__call-to-action-item:first-child {
+  margin-right: 1em;
+}
+
+.mortgage-calculator__call-to-action-item--text-center {
+  text-align: center;
+}
+
+.mortgage-calculator__call-to-action-button {
+  white-space: nowrap;
+}
+
+.button {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ff5252 none;
+  border: 2px double #ff5252;
+  color: #fff;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1em;
+  margin: 0;
+  outline: none;
+  height: 48px;
+  padding: 0 0.875em;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+  white-space: nowrap;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  text-decoration-skip: ink;
+  transition: color 0.1s linear;
+}
+
+.modal {
+  background: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 98;
+}
+
+.mortgage-calculator__call-to-action-item--text-center {
+  text-align: center;
+}
+
+.heading-3, .heading-3--no-mobile-change, .reverse-mortgage__lead-in-text {
+  font-size: 1.5em;
+  line-height: 1.333em;
+}
+
+.mortgage-calculator__information-box {
+  border: 2px solid #bdbdbd;
+  border-radius: 0.25em;
+  flex: 0 1 50%;
+  font-size: 0.875em;
+  margin-right: 1.25em;
+  padding: 0.5em;
+}
+
+.mortgage-calculator__information-box:last-child {
+  margin-right: 0;
+}
+
+.mortgage-calculator__information-box {
+  border: 2px solid #bdbdbd;
+  border-radius: 0.25em;
+  flex: 0 1 50%;
+  font-size: 0.875em;
+  margin-right: 1.25em;
+  padding: 0.5em;
+}
+
+.mortgage-calculator__information-box-value {
+  font: bold 1.25em/1.25 "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  margin-top: 0.25em;
+}
+
+.mortgage-calculator__information-box {
+  font-size: 0.875em;
+}
+
+.mortgage-calculator__information-box-value {
+  font: bold 1.25em/1.25 "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+}
+
+.mortgage-calculator__information-box {
+  font-size: 0.875em;
+}
+
+.mortgage-calculator__information-box-value {
+  font: bold 1.25em/1.25 "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  margin-top: 0.25em;
+}
+
+.mortgage-calculator__information-box-value {
+  font: bold 1.25em/1.25 "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+}
+
+.mortgage-calculator__information-box--green {
+  border-color: #3baf2f;
+}
+
+.mortgage-calculator__information-box {
+  border: 2px solid #bdbdbd;
+  border-top-color: rgb(189, 189, 189);
+  border-right-color: rgb(189, 189, 189);
+  border-bottom-color: rgb(189, 189, 189);
+  border-left-color: rgb(189, 189, 189);
+  border-radius: 0.25em;
+  flex: 0 1 50%;
+  font-size: 0.875em;
+  margin-right: 1.25em;
+  padding: 0.5em;
+}
+
+.mortgage-calculator__information-box:last-child {
+  margin-right: 0;
+}
+
+.mortgage-calculator__information-box--green {
+  border-color: #3baf2f;
+}
+
+.mortgage-calculator__information-box {
+  border: 2px solid #bdbdbd;
+  border-top-color: rgb(189, 189, 189);
+  border-right-color: rgb(189, 189, 189);
+  border-bottom-color: rgb(189, 189, 189);
+  border-left-color: rgb(189, 189, 189);
+  border-radius: 0.25em;
+  flex: 0 1 50%;
+  font-size: 0.875em;
+  margin-right: 1.25em;
+  padding: 0.5em;
+}
+
+.mortgage-calculator__information-box-value--green {
+  color: #3baf2f;
+}
+
+.mortgage-calculator__information-box-value {
+  font: bold 1.25em/1.25 "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  margin-top: 0.25em;
+}
+
+.mortgage-calculator__information-box-value--green {
+  color: #3baf2f;
+}
+
+.mortgage-calculator__amortization-data {
+  margin-bottom: 2em
+}
+
+.mortgage-calculator__amortization-information {
+  display: flex;
+  margin: 2em 0
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculator__amortization-information {
+    flex-direction: column
+  }
+}
+
+.mortgage-calculator__amortization-information-block {
+  align-self: center;
+  flex: 1 1 auto
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculator__amortization-information-block {
+    flex: 1 1 100%;
+    width: 100%
+  }
+}
+
+.mortgage-calculator__amortization-information-toggle {
+  text-align: right
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculator__amortization-information-toggle {
+    display: flex;
+    margin-top: 1em;
+    text-align: center
+  }
+}
+
+.mortgage-calculator__amortization-information-toggle-button {
+  border: 2px solid rgba(0, 0, 0, 0.87);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  flex: 1;
+  font-size: 1em;
+  line-height: 1;
+  padding: 1em
+}
+
+.mortgage-calculator__amortization-information-toggle-button:first-child {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0
+}
+
+.mortgage-calculator__amortization-information-toggle-button:last-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0
+}
+
+.mortgage-calculator__amortization-information-toggle-button--active {
+  background-color: rgba(0, 0, 0, 0.87);
+  color: #fff
+}
+
+.mortgage-calculator__amortization-table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%
+}
+
+.mortgage-calculator__amortization-table-cell {
+  padding: .5em 1em;
+  text-align: right
+}
+
+.mortgage-calculator__amortization-table-cell:first-child {
+  text-align: left
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculator__amortization-table-cell {
+    font-size: 75%;
+    padding: .25em .5em
+  }
+}
+
+.mortgage-calculator__amortization-table-container {
+  margin: 2em 0
+}
+
+.mortgage-calculator__amortization-table-container--refinance-calc {
+  margin: 2em auto;
+  margin-bottom: 4em;
+  max-width: 1200px;
+  position: relative
+}
+
+.mortgage-calculator__amortization-table-container--refinance-calc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.mortgage-calculator__amortization-table-container--refinance-calc * {
+  box-sizing: border-box
+}
+
+.mortgage-calculator__amortization-table-header {
+  background-color: #eee;
+  text-align: right
+}
+
+.mortgage-calculator__amortization-table-header-cell {
+  border-bottom: 2px solid #bdbdbd;
+  padding: .5em 1em;
+  text-align: right
+}
+
+.mortgage-calculator__amortization-table-header-cell:first-child {
+  text-align: left
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculator__amortization-table-header-cell {
+    font-size: 75%;
+    line-height: 1.25;
+    padding: .25em .5em
+  }
+}
+
+.mortgage-calculator__amortization-table-row {
+  border-bottom: 1px solid #bdbdbd
+}
+
+.mortgage-calculator__amortization-table-row--grouped-by-two:nth-child(odd) {
+  border-bottom: 0 none
+}
+
+.mortgage-calculator__amortization-table-row--tenth-hidden:nth-child(n+11) {
+  display: none
+}
+
+.mortgage-calculator__breadcrumbs {
+  margin-bottom: 1em
+}
+
+.mortgage-calculator__call-to-action {
+  align-items: center;
+  border-bottom: 1px solid #bdbdbd;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5em 0 1.5em;
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculator__call-to-action {
+    flex-direction: column
+  }
+}
+
+.mortgage-calculator__call-to-action-button {
+  white-space: nowrap
+}
+
+.mortgage-calculator__call-to-action-item:first-child {
+  margin-right: 1em
+}
+
+.mortgage-calculator__call-to-action-item--text-center {
+  text-align: center
+}
+
+.mortgage-calculator__card {
+  border: 1px solid #e0e0e0;
+  flex: 1 1 50%;
+  margin-left: 1.375em;
+  padding: 1.5em
+}
+
+.mortgage-calculator__card:first-child {
+  margin-left: 0
+}
+
+@media only screen and (max-width: 1024px) {
+  .mortgage-calculator__card {
+    margin: 1em 0 0;
+    padding: 1em
+  }
+  .mortgage-calculator__card:first-child {
+    margin-top: 0
+  }
+}
+
+.mortgage-calculator__card--right-justified {
+  text-align: right
+}
+
+.mortgage-calculator__card--spaced-out {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 0
+}
+
+.mortgage-calculator__card--zero-side-padding {
+  padding-left: 0;
+  padding-right: 0
+}
+
+.mortgage-calculator__card--zero-size-margin {
+  margin-left: 0;
+  margin-right: 0
+}
+
+.mortgage-calculator__card-inner {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+  padding: 0 1.375em
+}
+
+.mortgage-calculator__card-single-result {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em;
+  align-items: center;
+  background-color: #eee;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 9rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 2rem
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculator__card-single-result {
+    font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    font-size: 1.25rem;
+    line-height: 1.7em;
+    padding: 2rem .75rem
+  }
+}
+
+.mortgage-calculator__cards {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 6em
+}
+
+@media only screen and (max-width: 1024px) {
+  .mortgage-calculator__cards {
+    flex-direction: column;
+    margin-bottom: 3em
+  }
+}
+
+.mortgage-calculator__cards--lesser-bottom-margin {
+  margin-bottom: 2em
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculator__cards--lesser-bottom-margin {
+    margin-bottom: 1em
+  }
+}
+
+.mortgage-calculator__extra-payments-bar-graph {
+  margin: 2em 0
+}
+
+.mortgage-calculator__extra-payments-data {
+  margin-bottom: 1em;
+  padding: 0 1em
+}
+
+.mortgage-calculator__information-box {
+  border: 2px solid #bdbdbd;
+  border-radius: 0.25em;
+  flex: 0 1 50%;
+  font-size: .875em;
+  margin-right: 1.25em;
+  padding: .5em
+}
+
+.mortgage-calculator__information-box:last-child {
+  margin-right: 0
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculator__information-box {
+    line-height: 1.25;
+    margin: 0 .2em
+  }
+}
+
+.mortgage-calculator__information-box--full-width {
+  flex: 0 1 100%
+}
+
+.mortgage-calculator__information-box--green {
+  border-color: #3baf2f
+}
+
+.mortgage-calculator__information-box--green span {
+  color: #3baf2f
+}
+
+.mortgage-calculator__information-box--red {
+  border-color: #f44336
+}
+
+.mortgage-calculator__information-box--red span {
+  color: #f44336
+}
+
+.mortgage-calculator__information-boxes {
+  display: flex;
+  margin-bottom: 1em;
+  min-height: 4.875em
+}
+
+.mortgage-calculator__information-boxes:last-of-type {
+  margin-bottom: 0
+}
+
+.mortgage-calculator__information-boxes--last {
+  justify-self: flex-end;
+  margin-top: auto
+}
+
+.mortgage-calculator__information-boxes-container {
+  align-content: space-between;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.mortgage-calculator__information-box-value {
+  font: bold 1.25em/1.25 "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  margin-top: .25em
+}
+
+.mortgage-calculator__information-box-value--green {
+  color: #3baf2f
+}
+
+.mortgage-calculator__information-subtext {
+  color: #bdbdbd;
+  font-size: .75em
+}
+
+.mortgage-calculator__intro {
+  margin: 1.5em 0;
+}
+
+.mortgage-calculator__note {
+  color: #9e9e9e;
+  font-size: .75em;
+  line-height: 1.2;
+  margin: .5em 0
+}
+
+.mortgage-calculators {
+  margin-top: -11.688em;
+  padding: 0 1em;
+  position: relative
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculators {
+    margin-top: 0
+  }
+}
+
+.mortgage-calculators__card {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: .25em;
+  box-sizing: border-box;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+  margin-right: 1em;
+  max-width: 17.625em;
+  min-height: 23.5em;
+  padding: 1.5em;
+  width: 100%
+}
+
+.mortgage-calculators__card:hover {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px 0 rgba(0, 0, 0, 0.2)
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculators__card {
+    align-items: flex-start;
+    margin-bottom: 1em;
+    margin-right: 0;
+    min-height: 0;
+    padding: 1em
+  }
+}
+
+.mortgage-calculators__card--dummy-spacer {
+  height: 0;
+  min-height: 0;
+  visibility: hidden;
+  width: 17.625em
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculators__card--dummy-spacer {
+    display: none
+  }
+}
+
+.mortgage-calculators__card-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculators__card-header {
+    justify-content: space-between;
+    width: 100%
+  }
+}
+
+.mortgage-calculators__card-svg {
+  height: 5em;
+  width: 5em
+}
+
+.mortgage-calculators__card-svg .svg {
+  fill: #5e6a77
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculators__card-svg {
+    height: 4em;
+    width: 4em
+  }
+}
+
+.mortgage-calculators__card-icon {
+  padding-bottom: .5em
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculators__card-icon {
+    align-self: baseline
+  }
+}
+
+.mortgage-calculators__card-more {
+  color: #ff5252;
+  font-weight: 700;
+  line-height: .75em
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculators__card-more {
+    padding-top: 1em
+  }
+}
+
+.mortgage-calculators__card-text {
+  flex: 1 0 auto;
+  max-width: 20em;
+  width: 100%
+}
+
+.mortgage-calculators__card-title {
+  padding-bottom: 1rem
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculators__card-title {
+    align-items: center;
+    display: flex;
+    max-width: 10em;
+    padding-bottom: .75em
+  }
+}
+
+.mortgage-calculators__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-calculators__cards {
+    justify-content: space-around
+  }
+}
+
+.mortgage-calculators__container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-bottom: 4.5em
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-calculators__container {
+    padding: 1.5em 0 3em
+  }
+}
+
+.mortgage-process {
+  position: relative
+}
+
+.mortgage-process__hero-image {
+  color: #fff
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-process__hero-image {
+    height: 41.25em;
+    margin-bottom: 1.5em;
+    width: 100%
+  }
+}
+
+.mortgage-process__hero-image--guide {
+  background: url(https://cdn.americanfinancing.net/assets/pages/purchase/mortgage-process-guide-026509cbeac90882784f64c839ceb48a7fec5bf87ce13baba3bd8592ef4703d5.jpg) center 58%/cover no-repeat padding-box border-box scroll
+}
+
+.mortgage-process__hero-image--process {
+  background: url(https://cdn.americanfinancing.net/assets/pages/purchase/apply-mortgage-flavortown-e977fbd15a90bcd8518bb131084e0e8f084656bed96d1e34ef0be3684234caee.jpg) center 58%/cover no-repeat padding-box border-box scroll
+}
+
+.mortgage-process__hero-image--underwriting {
+  background: url(https://cdn.americanfinancing.net/assets/pages/purchase/process-underwriting-91fce95ee57b7ea9644a0c4a7290e139546a5e42c8d9c8574669c3556347c47c.jpg) center 58%/cover no-repeat padding-box border-box scroll
+}
+
+.mortgage-process__hero-image--closing {
+  background: url(https://cdn.americanfinancing.net/assets/pages/purchase/mortgage-closing-24b70fbb22e9becaae071d0dd20783654d6621c29e3a1909f039700c499f232d.jpg) center 58%/cover no-repeat padding-box border-box scroll
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-process__hero-image--closing {
+    background-position: 63% top
+  }
+}
+
+.mortgage-process__link {
+  color: #f44336
+}
+
+.mortgage-process__line {
+  border-bottom: 1px solid #bdbdbd;
+  margin-bottom: 1.5em
+}
+
+.mortgage-process__page {
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  margin: 3.4em auto 6em;
+  max-width: 1440px;
+  padding: 0
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-process__page {
+    margin: 0;
+    padding: 0 1em
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0)
+  }
+  100% {
+    transform: translateX(0.625em)
+  }
+}
+
+.mortgage-type-comparison {
+  margin: 0 auto;
+  max-width: 1200px
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison {
+    padding: 0 1em
+  }
+}
+
+.mortgage-type-comparison ul {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.mortgage-type-comparison * {
+  box-sizing: border-box
+}
+
+.mortgage-type-comparison--filtered .mortgage-type-comparison__table-column:last-child {
+  border-right: 1px solid #e0e0e0
+}
+
+.mortgage-type-comparison__intro {
+  margin: 3em auto 2.25em;
+  max-width: 40em
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-type-comparison__intro {
+    margin: 1.625em auto 1.25em
+  }
+}
+
+.mortgage-type-comparison__loan-features {
+  margin: 5.825em auto
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-type-comparison__loan-features {
+    margin: 3em auto
+  }
+}
+
+.mortgage-type-comparsion__loan-features-card {
+  margin-bottom: 1.5em;
+  padding: 1.5em
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-type-comparsion__loan-features-card:last-child {
+    margin-bottom: 0
+  }
+}
+
+.mortgage-type-comparsion__loan-features-card-title {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1.7em;
+  font-weight: 600;
+  padding-bottom: .5rem
+}
+
+.mortgage-type-comparsion__loan-features-card-text {
+  max-width: 21em
+}
+
+.mortgage-type-comparison__loan-features-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__loan-features-cards {
+    justify-content: space-around;
+    margin-top: .625em
+  }
+}
+
+.mortgage-type-comparison__table {
+  border: 1px solid #e0e0e0;
+  height: 40.75em;
+  margin: .75em auto;
+  max-width: 1200px;
+  position: relative;
+  z-index: 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table {
+    border: 1px solid #e0e0e0;
+    height: 100%
+  }
+  .mortgage-type-comparison__table::before {
+    background: linear-gradient(to left, #fff 10%, rgba(255, 255, 255, 0));
+    content: '';
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2.188em;
+    z-index: 1
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table--end::before {
+    display: none
+  }
+}
+
+.mortgage-type-comparison__table-check .svg {
+  fill: #3baf2f
+}
+
+.mortgage-type-comparison__table-column {
+  border-right: 1px solid #e0e0e0;
+  float: left;
+  transition: width .5s ease, opacity .5s ease, visibility .5s ease, height .7s ease;
+  width: calc(100% * (1/7))
+}
+
+.mortgage-type-comparison__table-column:last-child {
+  border-right: 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table-column {
+    width: 9.375em
+  }
+}
+
+.mortgage-type-comparison__table-column--hide {
+  border: 0;
+  opacity: 0;
+  visibility: hidden;
+  width: 0
+}
+
+.mortgage-type-comparison__table-column--hide li {
+  color: #fff
+}
+
+.mortgage-type-comparison__table-column--hide:last-child {
+  border-right: 0
+}
+
+.mortgage-type-comparison__table-column--pinned {
+  border-color: #5e6a77;
+  border-right: 0;
+  height: 100%;
+  left: 0;
+  margin-left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 12.5%;
+  z-index: 2
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table-column--pinned {
+    width: 6.625em
+  }
+}
+
+.mortgage-type-comparison__table-column-header {
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  height: 12.875em;
+  justify-content: space-between;
+  padding: 1.125em .75em 1.5em
+}
+
+.mortgage-type-comparison__table-column-header--pinned {
+  align-items: stretch;
+  background-color: #5e6a77;
+  color: #fff;
+  justify-content: center
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table-column-header--pinned {
+    padding: .5em
+  }
+}
+
+.mortgage-type-comparison__table-column-header-apply-button {
+  margin: 0;
+  white-space: nowrap
+}
+
+.mortgage-type-comparison__table-column-header-loan-name {
+  text-align: center
+}
+
+.mortgage-type-comparison__table-column-header-loan-name-link {
+  color: #34628f;
+  display: block;
+  font-weight: 600;
+  text-decoration: underline
+}
+
+.mortgage-type-comparison__table-column-header-top {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start
+}
+
+.mortgage-type-comparison__table-column-header-top-checkbox-container {
+  padding-bottom: .75em
+}
+
+.mortgage-type-comparison__table-column-header-top-checkbox-container * {
+  box-sizing: content-box
+}
+
+.mortgage-type-comparison__table-container {
+  background-color: #fff;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  width: 100%
+}
+
+.mortgage-type-comparison__table-filter {
+  align-items: center;
+  display: flex;
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-type-comparison__table-filter {
+    align-items: flex-start;
+    flex-direction: column
+  }
+}
+
+.mortgage-type-comparison__table-filter-buttons {
+  padding-right: 1em
+}
+
+.mortgage-type-comparison__table-filter-button-filter {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #34628f none;
+  border: 2px double #34628f;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 1em;
+  line-height: 1em;
+  margin: .75em 0;
+  min-width: 5em;
+  outline: none;
+  padding: .875em;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none
+}
+
+.mortgage-type-comparison__table-filter-button-filter:hover {
+  background: #27527c none;
+  border-color: #27527c;
+  color: #fff
+}
+
+.mortgage-type-comparison__table-filter-button-filter:focus, .mortgage-type-comparison__table-filter-button-filter:active {
+  background: #27527c none;
+  border-color: #fff;
+  border-radius: 0.25em;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 0.125em #27527c;
+  color: #fff
+}
+
+.mortgage-type-comparison__table-filter-button-filter[disabled], .mortgage-type-comparison__table-filter-button-filter:disabled {
+  background: #b9d1e9 none;
+  border-color: #b9d1e9;
+  border-radius: 0.25em;
+  color: #fff;
+  cursor: not-allowed
+}
+
+.mortgage-type-comparison__table-filter-button-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0);
+  border: 2px double #34628f;
+  border-color: rgba(255, 255, 255, 0);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  color: #34628f;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 1em;
+  line-height: 1em;
+  margin: .5em .25em 0 .5em;
+  min-width: 5em;
+  outline: none;
+  padding: .875em;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none
+}
+
+.mortgage-type-comparison__table-filter-button-reset:hover {
+  background: #27527c none;
+  border-color: #27527c;
+  color: #fff
+}
+
+.mortgage-type-comparison__table-filter-button-reset:focus, .mortgage-type-comparison__table-filter-button-reset:active {
+  background: #27527c none;
+  border-color: #fff;
+  border-radius: 0.25em;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 0.125em #27527c;
+  color: #fff
+}
+
+.mortgage-type-comparison__table-filter-button-reset[disabled], .mortgage-type-comparison__table-filter-button-reset:disabled {
+  background: rgba(255, 255, 255, 0);
+  border-color: #4585c4;
+  border-radius: 0.25em;
+  color: #27527c;
+  cursor: not-allowed
+}
+
+@media only screen and (max-width: 768px) {
+  .mortgage-type-comparison__table-filter-button-reset {
+    margin-left: 0
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table-scroll-right {
+    animation: 1s ease alternate infinite scroll-right;
+    display: block;
+    height: 1.625em;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    width: 1.125em;
+    z-index: 1
+  }
+}
+
+.mortgage-type-comparison__table-scroll-right-arrow {
+  display: none
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table-scroll-right-arrow {
+    display: block;
+    height: 1.625em;
+    width: auto
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table-scroll-right-arrow--hide {
+    opacity: 0;
+    transition: opacity .5s ease
+  }
+}
+
+.mortgage-type-comparison__table-filter-text {
+  font: normal 600 1.25em / 2.125em "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal;
+  font-weight: 600
+}
+
+.mortgage-type-comparison__table-item {
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 1em;
+  text-align: center
+}
+
+.mortgage-type-comparison__table-item:last-child {
+  border-bottom: 0
+}
+
+.mortgage-type-comparison__table-item--ie-fix {
+  align-items: stretch
+}
+
+.mortgage-type-comparison__table-item--pinned {
+  align-items: stretch;
+  background-color: #5e6a77;
+  border-bottom-color: #e0e0e0;
+  color: #fff;
+  justify-content: center;
+  text-align: left
+}
+
+.mortgage-type-comparison__table-item--pinned:last-child {
+  border-bottom: 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table-item--pinned {
+    padding: .5em
+  }
+}
+
+.mortgage-type-comparison__table-item--short {
+  height: 3.75em
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table-item--short {
+    height: 5.5em
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table-item--special-mobile-height {
+    height: 3.75em
+  }
+}
+
+.mortgage-type-comparison__table-item--tall {
+  height: 5.5em
+}
+
+.mortgage-type-comparison__table-wrapper {
+  padding-left: calc(100% / 8);
+  width: 100%
+}
+
+@media only screen and (max-width: 1200px) {
+  .mortgage-type-comparison__table-wrapper {
+    padding-left: 6.625em;
+    width: 72.25em
+  }
+}
+
+.multi-form__new-navigation {
+  align-items: center;
+  background-color: #313c47;
+  border-radius: 0 0 .25em .25em;
+  box-sizing: border-box;
+  display: flex;
+  height: 4.5em;
+  justify-content: flex-end;
+  padding: 0 1.5em;
+  width: 100%
+}
+
+.multi-form__new-page {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: .125em;
+  box-sizing: border-box;
+  display: block;
+  margin: 1em auto;
+  max-width: 1200px
+}
+
+@media only screen and (max-width: 1200px) {
+  .multi-form__new-page {
+    margin: 0 1em
+  }
+}
+
+.multi-form__new-page-inner-container {
+  margin: 0 auto;
+  max-width: 840px;
+  padding: 3em 2em
+}
+
+@media only screen and (max-width: 768px) {
+  .multi-form__new-page-inner-container {
+    padding: 1em
+  }
+}
+
+.multi-form__new-navigation-button {
+  height: 3em;
+  margin: 0
+}
+
+.multi-form__button {
+  margin: .5em;
+  width: 15.5em
+}
+
+.multi-form__button--large {
+  width: 17em
+}
+
+.multi-form__consent-checkbox {
+  max-width: 28.5em;
+  padding-top: 3.125em
+}
+
+.multi-form__consent-container {
+  border-radius: 0.25em;
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.54);
+  box-sizing: border-box;
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  height: 31.5em;
+  margin: 0 auto;
+  max-width: 840px;
+  overflow: auto;
+  padding: 1.5em
+}
+
+.multi-form__consent-form-disclosure {
+  margin: 0 auto;
+  max-width: 840px
+}
+
+.multi-form__consent-heading {
+  margin: 0
+}
+
+.multi-form__consent-list-item {
+  list-style-type: lower-alpha
+}
+
+.multi-form__divider {
+  border-bottom: 2px solid #cfd2d6;
+  margin: 1.5em auto 1em;
+  max-width: 50em
+}
+
+.multi-form__fields {
+  margin: 0 auto;
+  max-width: 36em
+}
+
+.multi-form__fields--max {
+  max-width: 1200px
+}
+
+.multi-form__fields--wide {
+  margin: 0 auto;
+  max-width: 52.5em
+}
+
+.multi-form__input--hidden {
+  display: none
+}
+
+.multi-form__navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px
+}
+
+.multi-form__navigation-button {
+  display: block
+}
+
+.multi-form__navigation-button--hidden {
+  visibility: hidden
+}
+
+.multi-form__navigation-button--right {
+  margin-left: auto
+}
+
+.multi-form__navigation-container {
+  background-color: #424242;
+  bottom: 0;
+  left: 0;
+  padding: 0 .5em;
+  position: fixed;
+  right: 0;
+  z-index: 30
+}
+
+.multi-form__option {
+  box-sizing: border-box;
+  margin-right: auto;
+  width: 50%
+}
+
+.multi-form__option:nth-child(even) {
+  padding-right: .5em
+}
+
+.multi-form__option:nth-child(odd) {
+  padding-left: .5em
+}
+
+@media only screen and (max-width: 768px) {
+  .multi-form__option {
+    flex-direction: column;
+    width: 100%
+  }
+  .multi-form__option:nth-child(even) {
+    padding-right: 0
+  }
+  .multi-form__option:nth-child(odd) {
+    padding-left: 0
+  }
+}
+
+.multi-form__option--row {
+  flex: 1 1 auto;
+  padding: 0 .5em;
+  width: auto
+}
+
+@media only screen and (max-width: 768px) {
+  .multi-form__option--row {
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%
+  }
+}
+
+.multi-form__options {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center
+}
+
+@media only screen and (max-width: 768px) {
+  .multi-form__options {
+    flex-direction: column
+  }
+}
+
+.multi-form__options--nowrap {
+  flex-flow: nowrap
+}
+
+@media only screen and (max-width: 768px) {
+  .multi-form__options--nowrap {
+    flex-flow: wrap
+  }
+}
+
+.multi-form__options--row {
+  flex-direction: row
+}
+
+@media only screen and (max-width: 768px) {
+  .multi-form__options--row {
+    flex-direction: column
+  }
+}
+
+.multi-form__page {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: .125em;
+  box-sizing: border-box;
+  display: block;
+  margin: 1em auto;
+  max-width: 1200px;
+  padding: 3em 2em
+}
+
+@media only screen and (max-width: 1200px) {
+  .multi-form__page {
+    margin: 1em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .multi-form__page {
+    padding: 1em
+  }
+}
+
+.multi-form__page--hidden {
+  display: none
+}
+
+.multi-form__page--no-progress-bar {
+  margin-bottom: 0;
+  margin-top: 3em
+}
+
+@media only screen and (max-width: 768px) {
+  .multi-form__page--no-progress-bar {
+    margin-bottom: 1em
+  }
+}
+
+.multi-form__page--wide-padding {
+  padding: 3em 6em
+}
+
+.multi-form__page-inner-container {
+  margin: 0 auto;
+  max-width: 840px
+}
+
+.multi-form__pre-confirmation {
+  margin: 2em auto 0;
+  max-width: 33em
+}
+
+.multi-form__pre-confirmation-information {
+  font-weight: bold;
+  margin-bottom: .5em
+}
+
+.multi-form__pre-confirmation-information--center {
+  text-align: center
+}
+
+.multi-form__pre-confirmation-text {
+  margin-bottom: .5em
+}
+
+.multi-form__pre-confirmation-text--center {
+  text-align: center
+}
+
+.multi-form__sub-question {
+  padding-bottom: .75em;
+  padding-top: 2em
+}
+
+.multi-form__sub-title {
+  padding-top: .5rem
+}
+
+.multi-form__title {
+  margin: .5em 0 3.125em;
+  text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+  .multi-form__title {
+    margin-bottom: 1.25em
+  }
+}
+
+.multi-form__title--left {
+  text-align: left
+}
+
+.multi-form__title--thank-you {
+  margin: .5em 0 1.5em
+}
+
+.note {
+  background-color: #4c5764;
+  border-radius: 0.25em;
+  color: #fff;
+  margin: 2em 0;
+  padding: 1.5em
+}
+
+.note__title {
+  font-weight: bold
+}
+
+.our-story__banner {
+  margin: 0 auto;
+  max-width: 1200px
+}
+
+@media only screen and (max-width: 1200px) {
+  .our-story__banner {
+    padding: 0 1em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__banner {
+    padding-top: 16em
+  }
+}
+
+.our-story__banner-container {
+  background: url(https://cdn.americanfinancing.net/assets/damian-gabie-peyton@2x-945eee2129251c2c080ea5abc12f2b4fa6a0e59368e8899ef2f7007507f3559e.jpg) top center/cover no-repeat scroll padding-box border-box transparent;
+  padding: 18.5em 0
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__banner-container {
+    margin: 0 auto;
+    padding: 0
+  }
+}
+
+.our-story__beginnings {
+  background: #313c47;
+  color: #fff
+}
+
+.our-story__beginnings-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 6em 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .our-story__beginnings-container {
+    padding: 6em 1em
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .our-story__beginnings-container {
+    align-items: center;
+    flex-direction: column
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__beginnings-container {
+    padding: 3em 1em
+  }
+}
+
+.our-story__beginnings-image {
+  display: block;
+  width: 17.75em
+}
+
+.our-story__beginnings-image:first-of-type {
+  margin-bottom: 1em
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__beginnings-image {
+    max-width: 24.313em;
+    width: 100%
+  }
+}
+
+.our-story__beginnings-image-portrait {
+  display: block;
+  height: auto;
+  margin-right: 1em;
+  width: 24.313em
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__beginnings-image-portrait {
+    max-width: 24.313em;
+    width: 100%
+  }
+}
+
+.our-story__beginnings-images {
+  display: flex
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__beginnings-images {
+    flex-direction: column
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__beginnings-images-left {
+    padding-bottom: 1em
+  }
+}
+
+.our-story__beginnings-sub-title {
+  max-width: 27.438em
+}
+
+@media only screen and (max-width: 1024px) {
+  .our-story__beginnings-sub-title {
+    max-width: 43em
+  }
+}
+
+.our-story__beginnings-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 2em
+}
+
+@media only screen and (max-width: 1024px) {
+  .our-story__beginnings-text {
+    flex: none;
+    padding-bottom: 2em;
+    padding-right: 0
+  }
+}
+
+.our-story__explanation {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 6em 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .our-story__explanation {
+    padding: 6em 1em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__explanation {
+    align-items: center;
+    flex-direction: column;
+    padding: 10em 1em 3em
+  }
+}
+
+.our-story__explanation-blob {
+  max-width: 33em
+}
+
+.our-story__explanation-blob:first-of-type {
+  padding-right: 1.5em
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__explanation-blob:first-of-type {
+    padding-bottom: 1.5em;
+    padding-right: 0
+  }
+}
+
+.our-story__mission {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 6em 0 4em
+}
+
+@media only screen and (max-width: 1200px) {
+  .our-story__mission {
+    padding: 6em 1em 4em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__mission {
+    padding: 3em 1em 1.25em
+  }
+}
+
+.our-story__mission-blob {
+  max-width: 23em;
+  padding-right: 1.5em
+}
+
+.our-story__mission-blob:last-of-type {
+  padding-right: 0
+}
+
+@media only screen and (max-width: 1024px) {
+  .our-story__mission-blob {
+    max-width: 33em;
+    padding-right: 0
+  }
+}
+
+.our-story__mission-blob-title {
+  font: normal 600 1.25rem / 1.7em "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal;
+  padding-bottom: .5rem
+}
+
+.our-story__mission-blob-text {
+  padding-bottom: 1.75em
+}
+
+.our-story__mission-blobs {
+  display: flex;
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 1024px) {
+  .our-story__mission-blobs {
+    align-items: center;
+    flex-direction: column
+  }
+}
+
+.our-story__mission-heading {
+  padding-bottom: 3.5em;
+  text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__mission-heading {
+    margin: 0 auto;
+    max-width: 33rem;
+    padding-bottom: 1.5em;
+    text-align: left
+  }
+}
+
+.our-story__mission-heading-title {
+  font: normal 400 2.125rem / 1.176em "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal;
+  padding-bottom: 1rem
+}
+
+.our-story__mission-heading-sub-title {
+  font: normal 400 1.5em / 1.333em "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal;
+  margin: 0 auto;
+  max-width: 27.563rem
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__mission-heading-sub-title {
+    margin: 0
+  }
+}
+
+.our-story__page-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px
+}
+
+@media only screen and (max-width: 1200px) {
+  .our-story__page-header {
+    padding: 0 1em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__page-header {
+    flex-direction: column
+  }
+}
+
+.our-story__page-header-house {
+  align-self: flex-end
+}
+
+.our-story__page-header-house object {
+  display: block
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__page-header-house--houdini {
+    display: none
+  }
+}
+
+.our-story__page-header-house-svg {
+  display: block
+}
+
+.our-story__page-header-houses {
+  display: flex;
+  justify-content: space-between;
+  max-width: 19.188em;
+  width: 100%
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__page-header-houses {
+    justify-content: center;
+    max-width: 100%
+  }
+}
+
+.our-story__page-header-text {
+  max-width: 49.375rem;
+  padding: 7em 3em 7em 0
+}
+
+@media only screen and (max-width: 1024px) {
+  .our-story__page-header-text {
+    padding: 5em 3em 5em 0
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__page-header-text {
+    padding: 3em 0 2em
+  }
+}
+
+.our-story__page-header-text-sub-title {
+  font: normal 400 1.5rem / 1.333em "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal
+}
+
+@media only screen and (max-width: 768px) {
+  .our-story__page-header-text-sub-title {
+    font: normal 400 1rem / 1.75em "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+    font-stretch: normal;
+    letter-spacing: normal
+  }
+}
+
+.page-header {
+  background: linear-gradient(135deg, #4872c9 0%, #6b6bc6 20%, #8562c3 40%, #9b58bf 60%, #ae5bbc 80%, #c03ab9 100%);
+  overflow: hidden;
+  position: relative;
+  width: 100%
+}
+
+.page-header--tall {
+  min-height: 16.375em;
+  padding-top: 1em
+}
+
+@media only screen and (max-width: 768px) {
+  .page-header--tall {
+    min-height: 6em;
+    padding-top: 1.75em
+  }
+}
+
+.page-header--taller {
+  min-height: 20.75em;
+  padding-top: 1em
+}
+
+@media only screen and (max-width: 768px) {
+  .page-header--taller {
+    min-height: 0;
+    padding-top: 0
+  }
+}
+
+.page-header--with-cards {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 11em;
+  max-height: 16em;
+  padding-top: 2.125em
+}
+
+.page-header--with-search {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3em;
+  padding: 3.125em 0
+}
+
+.page-header__background-1 {
+  background: #fff;
+  height: 13.938em;
+  left: 32%;
+  opacity: .05;
+  pointer-events: none;
+  position: absolute;
+  top: 4.688em;
+  transform: rotate(315deg);
+  width: 40.188em
+}
+
+@media only screen and (max-width: 768px) {
+  .page-header__background-1 {
+    display: none
+  }
+}
+
+.page-header__background-2 {
+  background: #fff;
+  height: 8.125em;
+  left: 46%;
+  opacity: .05;
+  pointer-events: none;
+  position: absolute;
+  top: 5.438em;
+  transform: rotate(45deg);
+  width: 56.25em
+}
+
+@media only screen and (max-width: 768px) {
+  .page-header__background-2 {
+    display: none
+  }
+}
+
+.page-header__background-container {
+  margin: 0 auto;
+  max-width: 1200px
+}
+
+.page-header__constrainer {
+  align-items: center;
+  display: flex;
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-bottom: 1.5em
+}
+
+@media only screen and (max-width: 1200px) {
+  .page-header__constrainer {
+    margin: 0 1em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .page-header__constrainer {
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 25em
+  }
+}
+
+.page-header__heading {
+  color: #fff
+}
+
+@media only screen and (max-width: 768px) {
+  .page-header__heading {
+    text-align: center
+  }
+}
+
+.page-header__header-navigation {
+  background-color: #313c47;
+  flex: 1 0 100%;
+  margin-bottom: 1.625em
+}
+
+.page-header__search-form {
+  flex: 0 1 auto;
+  width: 17.5em
+}
+
+@media only screen and (max-width: 1024px) {
+  .page-header__search-form {
+    margin-right: 1em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .page-header__search-form {
+    margin: 1em .85em 0;
+    width: 100%
+  }
+}
+
+.page-header__text {
+  padding: 2em 1em;
+  white-space: nowrap
+}
+
+.page-header__text--centered {
+  text-align: center
+}
+
+.page-header__text--wrap {
+  white-space: normal
+}
+
+.page-header__title {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 2.8125rem;
+  font-weight: normal;
+  line-height: 1.067em;
+  color: #fff;
+  padding: .5em;
+  text-align: center
+}
+
+.page-header__trees {
+  bottom: -1.75em;
+  position: absolute;
+  right: -2.5em
+}
+
+@media only screen and (max-width: 1024px) {
+  .page-header__trees {
+    display: none
+  }
+}
+
+.page-nav__button {
+  background-color: #34628f;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 4.125em;
+  justify-content: space-between;
+  margin-top: 2em;
+  padding: .5em 1em;
+  white-space: nowrap;
+  width: 19em
+}
+
+@media only screen and (max-width: 768px) {
+  .page-nav__button {
+    margin: 0 0 .5em;
+    width: auto
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .page-nav__button--reverse {
+    order: -1
+  }
+}
+
+.page-nav__button-arrow {
+  flex: 0 1 auto
+}
+
+.page-nav__button-arrow .chevron {
+  height: 1em;
+  stroke: #fff
+}
+
+.page-nav__button-arrow--left {
+  margin-right: .5em
+}
+
+@media only screen and (max-width: 768px) {
+  .page-nav__button-arrow--left {
+    padding-right: .25em
+  }
+}
+
+.page-nav__button-arrow--right {
+  margin-left: .5em
+}
+
+@media only screen and (max-width: 768px) {
+  .page-nav__button-arrow--right {
+    padding-left: .25em
+  }
+}
+
+.page-nav__buttons-container {
+  display: flex
+}
+
+@media only screen and (max-width: 768px) {
+  .page-nav__buttons-container {
+    margin-top: 1em
+  }
+}
+
+.page-nav__buttons-container--bottom {
+  margin-bottom: 2em
+}
+
+.page-nav__buttons-container--one {
+  justify-content: flex-end
+}
+
+.page-nav__buttons-container--two {
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 768px) {
+  .page-nav__buttons-container--two {
+    flex-direction: column
+  }
+}
+
+.page-nav__button-top {
+  flex: 0 1 auto;
+  font-size: .75em;
+  height: 1.125rem
+}
+
+@media only screen and (max-width: 768px) {
+  .page-nav__button-top {
+    font-size: 1em
+  }
+}
+
+.page-nav__button-top--next {
+  margin-right: 1.5em;
+  text-align: right
+}
+
+.page-nav__button-top--prev {
+  margin-left: 1.5em;
+  text-align: left
+}
+
+.page-nav__button-bottom {
+  display: flex;
+  flex-direction: row
+}
+
+.page-nav__button-bottom--next {
+  justify-content: flex-end
+}
+
+.page-nav__button-bottom--prev {
+  justify-content: flex-start
+}
+
+.page-nav__button-bottom-text {
+  flex: 0 1 auto;
+  height: 1.75em
+}
+
+.page {
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .page {
+    padding: 0 1em
+  }
+}
+
+.page--full-screen {
+  max-width: 100%
+}
+
+.page--under-header {
+  margin-top: 4.25em
+}
+
+.page--padded {
+  box-sizing: border-box;
+  padding-left: 1em;
+  padding-right: 1em
+}
+
+@media only screen and (max-width: 768px) {
+  .page--no-mobile-padding {
+    padding: 0
+  }
+}
+
+.page__block {
+  margin-bottom: 2em
+}
+
+.page__block--top-spacing {
+  margin-top: 1em
+}
+
+.page__breadcrumb-container {
+  margin: 1.5em auto 2em;
+  max-width: 1200px
+}
+
+@media only screen and (max-width: 1024px) {
+  .page__breadcrumb-container {
+    margin-left: 1em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .page__breadcrumb-container {
+    display: none
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .page__breadcrumb-container--always-visible {
+    display: inherit;
+    margin: 1em 0
+  }
+}
+
+.page__hero {
+  background-color: #313c47;
+  color: #fff;
+  overflow: hidden;
+  position: relative
+}
+
+.page__hero-container {
+  margin: 0 auto;
+  max-width: 1440px
+}
+
+.page__hero-content {
+  box-sizing: border-box;
+  padding: 8em 0 10.7em 5.5em;
+  position: relative;
+  z-index: 9
+}
+
+@media only screen and (max-width: 768px) {
+  .page__hero-content {
+    padding: 1em
+  }
+}
+
+.page__hero-image {
+  background: #313c47 none 0 center/cover no-repeat;
+  bottom: 0;
+  clip: rect(0, 2000px, 2000px, 100px);
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55%
+}
+
+@supports (-webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0)) or (clip-path: polygon(0 0, 0 0, 0 0, 0 0)) {
+  .page__hero-image {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 220px 100%);
+    clip: auto;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 220px 100%)
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .page__hero-image {
+    -webkit-clip-path: none;
+    clip-path: none;
+    height: 16em;
+    position: relative;
+    width: 100%
+  }
+}
+
+.page__hero-image--15-year-mortgage {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/programs-hero-15-year-bbaa20935b901b799f56b09edea43ba18afcfb233ebfee7ed549383acf15f9ee.jpg)
+}
+
+.page__hero-image--30-year-mortgage {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/programs-hero-30-year-1dcc03bddaf0f8ac97df9416489967aa4d3b40c03b8b837517d57e8f5420b256.jpg)
+}
+
+.page__hero-image--adjustable-rate-mortgage {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/programs-hero-arm-eccf8afa7aa9b61d0fcaf43c4f0e5814d3173e65e9bd724ab41829af954a1d43.jpg)
+}
+
+.page__hero-image--all-in-one-mortgage-heloc {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/all-in-one-4f1f782d4f27b700280670285746cfb648839e81187f7009289c8642bfa1eab4.jpg)
+}
+
+.page__hero-image--bank-statement-loans {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/bank-statement-cf580fe70cc21e51158fcb783b5ff2ce55cc6fc0ab69908168668ba467cecd9b.jpg)
+}
+
+.page__hero-image--buying-a-condo {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/condo-44a4bc26abda3e361b0087f107975adf53b28e816d0ca71be6daaf1caef65136.jpg)
+}
+
+.page__hero-image--buying-a-home {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/new-home-eb5e9939d96c77ed2607ddb40a7082e648c8b5d269ec9332991c9a911acc43a4.jpg)
+}
+
+.page__hero-image--buying-a-second-home {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/second-home-3f31fdb6d40b96f6c6105c4cadfd0c9f3bb347cbf724d342955450657e3ad32b.jpg)
+}
+
+.page__hero-image--buying-a-townhouse {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/townhouse-9e5351998df92571667e88d88e70cfbcface8e9315e34f068a6dbb77c01a6083.jpg)
+}
+
+.page__hero-image--chfa {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/programs-hero-chfa-92890ab5d55c5b6729bf7d307dc5dd847607df1e4ad3e9618802e87c71a3c489.jpg)
+}
+
+.page__hero-image--custom-home-loans {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/custom-loan-f4ccb44dce53c946a5eef3ada9eb644526628bff609058dc48e0bdbb64c2d13c.jpg)
+}
+
+.page__hero-image--down-payment-assistance-pages {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/down-payment-assistance-d0522ddacbcf9a152e0bc52e5adafb9e08f2c8c38172cfd0f9b134bfe2a141b3.jpg)
+}
+
+.page__hero-image--fha-home-loan {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/programs-hero-fha-d300e7a443427d1a9c0b4294c00846a7f661189efdf5d41eb491a64841a2ffe4.jpg)
+}
+
+.page__hero-image--first-time-home-buyer {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/purchase/first-time-home-buyer-346c180d0497ae2976de0b1bdea218658b8243f5680b4be588dab2746c38be5b.jpg);
+  background-position-y: 36%
+}
+
+.page__hero-image--first-time-home-buyer-checklist {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/purchase/woman-checking-home-list@2x-de4d917d84542a7ef449192230bc0e13e48506a4b570fa429c19c204a743b82a.jpg)
+}
+
+.page__hero-image--guide-to-refinancing {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/refinance/couple-getting-help-with-home-refinance@2x-0a2600cd00918766fc70084a68f2f96e6a85adda95e143bf6389c77b7ca3bb6e.jpg)
+}
+
+.page__hero-image--harp {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/programs-hero-harp-894047db1190b1a5c698e59850b34de144ef208aacb0f9f3174230270efe6676.jpg)
+}
+
+.page__hero-image--credit-care {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/credit-care-da87d401e511103b824c812c678b04a818937dc998903decb65d536de663e291.jpg)
+}
+
+.page__hero-image--how-to-get-preapproved-for-a-home-loan {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/purchase/hand-holding-phone-with-mortgage-approval-checkmark@2x-6aadd1f4c0b3646c10f2d301bc75d6b5e0573ce1a43c301e3e85ac05446a2cc7.jpg)
+}
+
+.page__hero-image--in-house-mortgage-underwriting {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/in-house-mortgage-underwriting-a07d221dffba427bfd86a1637329ac19f7a453910c89e25c520f55e72a6cf212.jpg)
+}
+
+.page__hero-image--jumbo-loan {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/jumbo-home-loans-8d01eb9ae36ce1af1402531f2636238132d57dae21f1c89015f7dd3f370877fb.jpg)
+}
+
+.page__hero-image--mortgage-refinancing-to-pay-off-debt {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/refinance/debt-refinancing-calendar@2x-2bfe03a7503371c8c757d79b53ff05a3c3247e3ef99c4644bd017816ab777210.jpg)
+}
+
+.page__hero-image--refinance-cash-out {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/programs-hero-cash-out-0425dbbe14c13c7cb8df28376272a1dd66c20b15790ef257e6389739d4005d65.jpg)
+}
+
+.page__hero-image--reverse-mortgage-basics {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/reverse-mortgage/researching-reverse-mortgages@2x-45d6dadafd819d842e8c0c83de4e765e87245fe15a31f071235a6e65dc80eb92.jpg)
+}
+
+.page__hero-image--reverse-mortgage-for-retirement {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/reverse-mortgage/retired-senior-couple-walking-beach@2x-f95d8ee0d2dfabb11c80f5aa64f5e21b913b8535204e30d8739060f55eb3273c.jpg)
+}
+
+.page__hero-image--reverse-mortgage-pros-and-cons {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/reverse-mortgage/seniors-pointing-at-house@2x-8e0c0593ec79b9fe754dddaa115fc918b1da774ded20a371fee9443f4ffea9c6.jpg)
+}
+
+.page__hero-image--should-i-refinance-my-mortgage {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/refinance/wondering-about-mortgage-refinancing@2x-d44b69d1f20dc8a011a1a29f62ba522e0e4024560f6ecd6862a8c0efc386890f.jpg)
+}
+
+.page__hero-image--usda {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/programs-hero-usda-3d5532e430085a5cfec190b31f977174046047b10b7adf3ca9ec28658a4b6aed.jpg)
+}
+
+.page__hero-image--va {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/programs-hero-va-17ac3ff8f81a1faeef46ebacaf9a6714b8cf4bcb0ddf7cc816bd81874937f7fc.jpg)
+}
+
+.page__hero-image--your-term-mortgage {
+  background-image: url(https://cdn.americanfinancing.net/assets/pages/any-term-0353c06e7cb8c0ff47504e814b3889a9e52353735894949df465a80ca9318cf7.jpg)
+}
+
+.page__hero-image--alabama {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/alabama-415aa54a81ac78038abc8057396a91fdbb101e2b46635593644a8ff3fd9a94f0.jpg)
+}
+
+.page__hero-image--alaska {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/alaska-fa4586b0250ed4a5b5af6400e64baffabf6d9683e7e7a0df804dbdd9c0bda550.jpg)
+}
+
+.page__hero-image--arizona {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/arizona-611f81ce724c063d6a9e587d5b6d2582fce9430190a900fb2ed471b1c5ded3af.jpg)
+}
+
+.page__hero-image--arkansas {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/arkansas-72cb542a878af4c88c35c09d2c0d08331df9689a7b0740ac696642c297627a7e.jpg)
+}
+
+.page__hero-image--california {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/california-c2da5cf6b6609a9529e07cb3d31720eb74bc873bd3a7ec12c191b516b6d17e7f.jpg)
+}
+
+.page__hero-image--colorado {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/colorado-fb2b2e78cf79d8952f9171cf6029d4e39f83d706b1ae855574059c1087115d29.jpg)
+}
+
+.page__hero-image--connecticut {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/connecticut-a698ddddd5d3bfc823ed5f53bc12353e4644c0fed058e7f6e7fd068fa40314d7.jpg)
+}
+
+.page__hero-image--delaware {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/delaware-ba7cd234ea8dae9ca28ce65f470afb7c65d4214c3c4b1e00d3f7a2e41774eac8.jpg)
+}
+
+.page__hero-image--district-of-columbia {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/district-of-columbia-7136f270f54b8d032c99aa05f2583f543ea0cfa6d91407fedf716783498b9018.jpg)
+}
+
+.page__hero-image--florida {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/florida-0887c9e9b46d4bc0c92de7a50b11584df315e3877f58a3d03628b1e62a1c3d9d.jpg)
+}
+
+.page__hero-image--georgia {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/georgia-0100f366048262a49a650f27eefc3b9c20043fcaaf0324734a81f32cf7ba478d.jpg)
+}
+
+.page__hero-image--hawaii {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/hawaii-c709d50c22c30d6ddf9327f5e408edae874ec69ffbbffcfdd4956909d33764a9.jpg)
+}
+
+.page__hero-image--idaho {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/idaho-1bbe936882bf05a24524a78d79eba5b3e6c659b8b021bbac2e8645b368ef2534.jpg)
+}
+
+.page__hero-image--illinois {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/illinois-007a4f43eb1e41bb37d75f4795214c199936e2cc8b505c4fd28d56e4e6fe2ac5.jpg)
+}
+
+.page__hero-image--indiana {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/indiana-73f3031b0db14139821e3de495704f1f906af5c13815b2161f51e7e4c6d5a689.jpg)
+}
+
+.page__hero-image--iowa {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/iowa-42e1c9eeb6d2ab8ca4644e6eb21cf6dbf6149f459e53b5757aedfce2cfbb955a.jpg)
+}
+
+.page__hero-image--kansas {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/kansas-94c5a8c8407dfd5c14ca217f289bc7a54608d04a1839272255accea326687ad8.jpg)
+}
+
+.page__hero-image--kentucky {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/kentucky-5e41d140770f7c41446655401f46941b5a572764efffec272ecfb5d69a8ec7c2.jpg)
+}
+
+.page__hero-image--louisiana {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/louisiana-8a62bf43e9689e2e5a02a50aab495bd1aa954bf67001ddb4078818ab86c34981.jpg)
+}
+
+.page__hero-image--maine {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/maine-a4887a713002608f1c598fc07f09e2e0460ee8b4f0c976d4fc443f1e08b96386.jpg)
+}
+
+.page__hero-image--maryland {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/maryland-349046cc73a28c735c3468f45ddee6a6c2391a67bcf293b1d8d837a2e6c2446a.jpg)
+}
+
+.page__hero-image--massachusetts {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/massachusetts-613f69f5c37dbca6be437e679cf4bee6459d0ab4965f2b913fbd2246335fc9b5.jpg)
+}
+
+.page__hero-image--michigan {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/michigan-dae930be813bcaf437ffe63419a0b12914d19affbe9c582fab356c94975d1722.jpg)
+}
+
+.page__hero-image--minnesota {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/minnesota-f3fb471a86e5d7f634a3fe19c8156f4edf1de1c21fdc01a6279b979b32155845.jpg)
+}
+
+.page__hero-image--mississippi {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/mississippi-a102330a40b4ba0cec2e5941ef1e847045aaeb0a50c097b97617c5a6b488b5fe.jpg)
+}
+
+.page__hero-image--missouri {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/missouri-ff771fc7bef1e8d85af36006fcdb21f08d3291af97f4705ee6871795b75e333a.jpg)
+}
+
+.page__hero-image--montana {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/montana-66d9ec158694ddd4074c9898f5d5b204595ae04b2130f1e752aa60987ce8bb94.jpg)
+}
+
+.page__hero-image--nebraska {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/nebraska-cd29f13441c2cf484c5cfa2553c80b7f07257ce0d0833b68171b6d34c6413e68.jpg)
+}
+
+.page__hero-image--nevada {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/nevada-f45bf87067c8e071190914cb12ded4853314696bf5c30487c4f5df8b6ce72692.jpg)
+}
+
+.page__hero-image--new-hampshire {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/new-hampshire-ba14788c9164dbc1ffa0e27d1b8f685ea0f19fa602eefce684d5ea45a9b10e42.jpg)
+}
+
+.page__hero-image--new-jersey {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/new-jersey-3a7ac4f0bd0b4d8681d6c52d01f22d9ac909a3c086becf3cbceafc7b6cc8942a.jpg)
+}
+
+.page__hero-image--new-mexico {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/new-mexico-5ffb9e6f0a26ab73675e69e74f8f6789ce7bf047f57f481c997ff24e26047886.jpg)
+}
+
+.page__hero-image--new-york {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/new-york-28109d1b5630e4190817eecafcd556c5e544e1afe86696643d4bf3c8aa9c620e.jpg)
+}
+
+.page__hero-image--north-carolina {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/north-carolina-140727a374931b96e1b03d8ba5b9195310ccb70b3f4999edbc19654e8d33e17e.jpg)
+}
+
+.page__hero-image--north-dakota {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/north-dakota-35ff8395c7c70be1c19388007c3cde2950866d7e3e2dd097c99eb29fd56089ce.jpg)
+}
+
+.page__hero-image--ohio {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/ohio-7442b4540307922c3daaed57373ab17a15de87676489760980b00c594dda91d1.jpg)
+}
+
+.page__hero-image--oklahoma {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/oklahoma-fe03375cab159327ade5f3585be1722e11d4d1b3e6e1000cfe27c0e039790909.jpg)
+}
+
+.page__hero-image--oregon {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/oregon-9ff302f194e140ba03559d5df45d0651d27f8ddc29f5180e6b3a2a035a3ef191.jpg)
+}
+
+.page__hero-image--pennsylvania {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/pennsylvania-022ecfecb0cb7d92d7f3388280a408fccb25ff11eaf612920a20d663804bf9c5.jpg)
+}
+
+.page__hero-image--rhode-island {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/rhode-island-e616d4344960604ea0223f4c7c2545dc9f43bea126dce52fc5fa19920662cd05.jpg)
+}
+
+.page__hero-image--south-carolina {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/south-carolina-e21a63194548aeff3c1b0b4680c86df2a280e378f72278884f8281b1e5793d99.jpg)
+}
+
+.page__hero-image--south-dakota {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/south-dakota-084cf9e6050d011d72ff8e41d62f910d5163d626029909bff34245bb9f2d9f0d.jpg)
+}
+
+.page__hero-image--tennessee {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/tennessee-cd302ce65f95b2205a8c41cb536842c3ae2c22cf1337a4ad0b5e955f7b848157.jpg)
+}
+
+.page__hero-image--texas {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/texas-7e0fe622f9f3191ee6bd38e2385e0020c3856e9f274e1a6f1bba1acc16169075.jpg)
+}
+
+.page__hero-image--utah {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/utah-278dbe61b5c4e89a04f0732d894ffa94c7efcf7714c11cfec5ed752ddf4700b3.jpg)
+}
+
+.page__hero-image--vermont {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/vermont-d58d011e4075c70b0724817ce0e82b27e01103de2181ac1fb4a79b5635a230fd.jpg)
+}
+
+.page__hero-image--virginia {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/virginia-94edb49b4995d0fc1e267b2851e1bfa37d59bba034b23cbc83f2d9492a1a2ec2.jpg)
+}
+
+.page__hero-image--washington {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/washington-939e8ca9cd82690ede132faba774c2055971ab8a420469ea9e8b76cb9c6ab63a.jpg)
+}
+
+.page__hero-image--west-virginia {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/west-virginia-ec61836214d30fcef3152ce981f37d819ba0a334a659374245472f67cfaa6f2d.jpg)
+}
+
+.page__hero-image--wisconsin {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/wisconsin-286ac5d78b7eba0699a6b5441dcbc63423c015dddbca1aa9e4c24eb3cd0b6c4d.jpg)
+}
+
+.page__hero-image--wyoming {
+  background-image: url(https://cdn.americanfinancing.net/assets/states/wyoming-f1cda13b234d2df7cf47284034bd7166a1aaf6b4eecf239567371a75e9d8ec16.jpg)
+}
+
+.page__hero-title {
+  max-width: 32em;
+  width: 40vw
+}
+
+@media only screen and (max-width: 768px) {
+  .page__hero-title {
+    max-width: none;
+    width: auto
+  }
+}
+
+.page__layout {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1200px
+}
+
+.page__layout--large-desktop {
+  max-width: 1440px
+}
+
+.page__layout--thin {
+  max-width: 600px
+}
+
+.page__layout--two-columns {
+  flex-direction: row
+}
+
+@media only screen and (max-width: 1024px) {
+  .page__layout--two-columns {
+    flex-direction: column
+  }
+}
+
+.page__layout-column {
+  flex: 1 1 auto
+}
+
+@media only screen and (max-width: 1024px) {
+  .page__layout-column {
+    flex: 1 0 auto
+  }
+}
+
+.page__layout-column--aside {
+  flex: 0 1 40%;
+  margin-left: 5em
+}
+
+@media only screen and (max-width: 1024px) {
+  .page__layout-column--aside {
+    flex: 1 0 auto;
+    margin: 0;
+    padding: 2em 0 1em
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .page__layout-column--aside-to-top {
+    order: -1
+  }
+}
+
+.page__layout-column--primary {
+  flex: 1 0 60%
+}
+
+@media only screen and (max-width: 1024px) {
+  .page__layout-column--primary {
+    flex: 1 0 auto
+  }
+}
+
+.page__link-list {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 0.25em;
+  padding: 1em
+}
+
+.page__paragraph--muted {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: .75em;
+  line-height: 1.6em
+}
+
+.page__paragraph--white {
+  color: #fff
+}
+
+.page__title {
+  margin-bottom: 1.25rem
+}
+
+.page__youtube-wrapper {
+  padding: 3em 0
+}
+
+@media only screen and (max-width: 768px) {
+  .page__youtube-wrapper {
+    padding: 1em 0
+  }
+}
+
+.payments {
+  margin: 0 auto;
+  max-width: 840px;
+  padding: 2em 1em
+}
+
+.payments__button {
+  margin-bottom: 2em
+}
+
+.payments__heading {
+  margin-bottom: 1em
+}
+
+.peyton-homepage {
+  margin: 3em auto 6em;
+  max-width: 1200px
+}
+
+.peyton-homepage__card {
+  background-color: #4c5764;
+  border-radius: .75em;
+  margin-right: 3em;
+  padding: 4em;
+  position: relative
+}
+
+@media only screen and (max-width: 1200px) {
+  .peyton-homepage__card {
+    margin: 15em 1em 0;
+    padding: 1em 4em 2.5em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .peyton-homepage__card {
+    border-radius: 0;
+    margin: 9em 0 0;
+    padding: 1em 1em 2.5em
+  }
+}
+
+.peyton-homepage__copy {
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 2.125rem;
+  width: 22rem
+}
+
+@media only screen and (max-width: 1200px) {
+  .peyton-homepage__copy {
+    width: 100%
+  }
+}
+
+.peyton-homepage__image {
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px 0 rgba(0, 0, 0, 0.2);
+  border-radius: .75em;
+  height: 100%;
+  object-fit: cover;
+  width: 100%
+}
+
+.peyton-homepage__image-container {
+  height: 25em;
+  position: absolute;
+  right: -3em;
+  top: 3.5em;
+  width: 45em
+}
+
+@media only screen and (max-width: 1200px) {
+  .peyton-homepage__image-container {
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    top: -12em;
+    width: 65%
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .peyton-homepage__image-container {
+    width: 80%
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .peyton-homepage__image-container {
+    height: 14em;
+    left: 1em;
+    right: 1em;
+    top: -7em;
+    width: auto
+  }
+}
+
+.peyton-homepage__title {
+  color: #fff;
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 2.125rem;
+  font-weight: 100;
+  line-height: 2.5rem;
+  margin-bottom: 2rem;
+  width: 22rem
+}
+
+@media only screen and (max-width: 1200px) {
+  .peyton-homepage__title {
+    line-height: normal;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 12rem;
+    width: 28rem
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .peyton-homepage__title {
+    margin: 0 0 1rem;
+    max-width: 28rem;
+    padding-top: 8rem;
+    width: 100%
+  }
+}
+
+.press__media-contact {
+  padding-top: 2em
+}
+
+@media only screen and (max-width: 1024px) {
+  .press__media-contact {
+    padding-top: 0
+  }
+}
+
+.press__media-contact-card {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 9.25em;
+  justify-content: space-between;
+  padding: 1.5em
+}
+
+.press__media-contact-title {
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.7em;
+  padding-bottom: 1rem
+}
+
+.press__mention {
+  border-bottom: 1px solid #bdbdbd;
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5em 0
+}
+
+@media only screen and (max-width: 768px) {
+  .press__mention {
+    flex-direction: column;
+    padding: 1em 0
+  }
+}
+
+.press__mention-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 26.5em;
+  padding-right: 1em
+}
+
+@media only screen and (max-width: 768px) {
+  .press__mention-text {
+    order: 1
+  }
+}
+
+.press__mention-text-copy {
+  max-width: 26.5em
+}
+
+.press__mention-text-title {
+  font-size: 1.5em;
+  line-height: 1.333em;
+  color: rgba(0, 0, 0, 0.87);
+  max-width: 26.5em
+}
+
+@media only screen and (max-width: 768px) {
+  .press__mention-text-title {
+    padding-top: .5em
+  }
+}
+
+.press__page-header {
+  padding: .5em 0;
+  text-align: center
+}
+
+.primary-content-wrapper {
+  flex: 1 0 auto
+}
+
+.privacy__container {
+  margin: auto;
+  max-width: 33em;
+  padding: 2em
+}
+
+@media only screen and (max-width: 768px) {
+  .privacy__container {
+    padding: 0 1em
+  }
+}
+
+.privacy__copy {
+  margin: 1.5em 0
+}
+
+.privacy__definitions-container {
+  padding-bottom: 1.5em
+}
+
+.privacy__definitions-heading {
+  padding-bottom: .75em
+}
+
+.privacy__heading {
+  margin: 1em 0
+}
+
+.privacy__intro-container {
+  padding: 2em 0 .25em
+}
+
+.privacy__intro-heading {
+  margin: .75em 0
+}
+
+@media only screen and (max-width: 768px) {
+  .privacy__intro-heading {
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1.25em;
+    margin: 0
+  }
+}
+
+.privacy__list {
+  margin: 1.5em 0;
+  padding-left: 2em
+}
+
+.privacy__reasons-heading {
+  margin: 1em 0
+}
+
+@media only screen and (max-width: 768px) {
+  .privacy__reasons-heading {
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1.25em
+  }
+}
+
+.privacy__sharing-copy {
+  padding-top: 1.5em
+}
+
+.privacy__sharing-reasons-section-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 768px) {
+  .privacy__sharing-reasons-section-container {
+    flex-direction: column;
+    padding: 1em 0
+  }
+}
+
+.privacy__sharing-reason-qa {
+  flex: 0 1 auto;
+  margin: 1.5em 0
+}
+
+@media only screen and (max-width: 768px) {
+  .privacy__sharing-reason-qa {
+    margin: .5em 0
+  }
+}
+
+.privacy__sharing-section {
+  border-bottom: 1px solid #bdbdbd
+}
+
+.privacy__sharing-question {
+  margin-bottom: .5em
+}
+
+.privacy__what-we-do-container {
+  padding: 1em 0 1.5em
+}
+
+.privacy__what-we-do-heading {
+  padding-top: 1em
+}
+
+@media only screen and (max-width: 768px) {
+  .privacy__what-we-do-heading {
+    font-size: 2.125em;
+    font-weight: 400;
+    line-height: 1.125em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .programs {
+    margin-top: 0
+  }
+}
+
+.programs__call-to-action {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em .5em
+}
+
+@media only screen and (max-width: 768px) {
+  .programs__call-to-action {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1.5em 0 3em
+  }
+}
+
+.programs__call-to-action-text {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em
+}
+
+.programs__card {
+  align-items: flex-start;
+  background-color: #fff;
+  border: 0.25em solid #bdbdbd;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 1.5em;
+  min-height: 12em;
+  padding: 1.4em;
+  width: 24.24em
+}
+
+.programs__card:hover {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+  border: 0.25em solid #a84cb8
+}
+
+@media only screen and (max-width: 768px) {
+  .programs__card {
+    margin-bottom: 1em;
+    max-width: 24.24em;
+    min-height: 0;
+    padding: 1em;
+    width: 100%
+  }
+  .programs__card:last-of-type {
+    margin-bottom: 0
+  }
+}
+
+.programs__card--no-display {
+  display: none
+}
+
+.programs__card--dummy-spacer {
+  height: 0;
+  min-height: 0;
+  visibility: hidden
+}
+
+@media only screen and (max-width: 768px) {
+  .programs__card--dummy-spacer {
+    display: none;
+    margin: 0;
+    padding: 0
+  }
+}
+
+.programs__card-more {
+  color: #ff5252;
+  font-weight: 700;
+  line-height: .75em;
+  text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+  .programs__card-more {
+    padding-top: 1em
+  }
+}
+
+.programs__card-text {
+  flex: 1 0 auto;
+  max-width: 21em
+}
+
+@media only screen and (max-width: 768px) {
+  .programs__card-text {
+    margin-bottom: .5em
+  }
+}
+
+.programs__card-title {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em;
+  font-weight: normal;
+  max-width: 100%;
+  padding-bottom: 1rem
+}
+
+@media only screen and (max-width: 768px) {
+  .programs__card-title {
+    padding-bottom: .5rem
+  }
+}
+
+.programs__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 1200px) {
+  .programs__cards {
+    justify-content: space-around
+  }
+}
+
+.programs__container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-bottom: 4.5em
+}
+
+@media only screen and (max-width: 1200px) {
+  .programs__container {
+    padding: 0 1em 4.5em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .programs__container {
+    padding: 0 1em 3em
+  }
+}
+
+.programs__heading {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 2.8125rem;
+  font-weight: normal;
+  line-height: 1.067em
+}
+
+@media only screen and (max-width: 768px) {
+  .programs__heading {
+    font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    font-size: 2.125rem;
+    line-height: 1.176em;
+    white-space: normal
+  }
+}
+
+.programs__page-heading-h2 {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em
+}
+
+@media only screen and (max-width: 768px) {
+  .programs__page-heading-h2--title {
+    padding-top: 2rem
+  }
+}
+
+.programs__page-heading-h3 {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em
+}
+
+@media only screen and (max-width: 768px) {
+  .programs__page-heading-h3--title {
+    padding-top: 2rem
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .programs__page-heading-h3--title-top {
+    padding: 1.333em 0 0
+  }
+}
+
+.programs__page-heading-h4 {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1.7em
+}
+
+.programs__page-heading-h4--with-top-padding {
+  padding-top: 1em
+}
+
+.purchase__all-programs {
+  display: flex;
+  font-weight: 600;
+  justify-content: space-between
+}
+
+.purchase__all-programs-arrow-container {
+  opacity: .54
+}
+
+.purchase__all-programs-text {
+  color: #f44336;
+  padding-right: 1em
+}
+
+.purchase__evergreen {
+  background: linear-gradient(45deg, #4f79c5 0%, #c33fb4 70%, #c33fb4 100%);
+  overflow: hidden;
+  padding: 6em 0 0;
+  position: relative
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__evergreen {
+    padding-top: 3em
+  }
+}
+
+.purchase__evergreen--bottom {
+  background-color: #fafafa;
+  bottom: -40em;
+  height: 30em;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  right: 50%;
+  transform: translate(-50%, -50%) skewY(-4deg);
+  width: 200%
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__evergreen--bottom {
+    bottom: -43em
+  }
+}
+
+.purchase__evergreen-background-1 {
+  background-color: #fff;
+  bottom: 0;
+  box-shadow: 2em 0 1.125em;
+  height: 200%;
+  left: -5.625em;
+  opacity: .05;
+  position: absolute;
+  transform: skewX(225deg);
+  width: 200%
+}
+
+.purchase__evergreen-background-2 {
+  background: linear-gradient(130deg, #815fbc 0%, #a94db7 100%);
+  bottom: 16em;
+  height: 17.813em;
+  left: 44.875em;
+  opacity: .95;
+  position: absolute;
+  transform: rotate(315deg);
+  width: 40.125em
+}
+
+.purchase__evergreen-background-3 {
+  background-color: #a84cb8;
+  bottom: 5.875em;
+  height: 8.438em;
+  left: 74.125em;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 56.25em
+}
+
+.purchase__evergreen-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  margin-right: 1.313em;
+  max-width: 24em;
+  overflow: hidden;
+  padding: 0
+}
+
+.purchase__evergreen-card:last-of-type {
+  margin-right: 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .purchase__evergreen-card {
+    margin-right: 0
+  }
+}
+
+.purchase__evergreen-card-image {
+  display: block;
+  min-height: 1em;
+  width: 100%
+}
+
+.purchase__evergreen-card-text {
+  flex-grow: 1;
+  padding-bottom: 1em
+}
+
+.purchase__evergreen-card-text-content {
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1.5em
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__evergreen-card-text-content {
+    padding: 1.125em 1em 1em
+  }
+}
+
+.purchase__evergreen-card-title {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em;
+  padding-bottom: .5em
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__evergreen-card-title {
+    padding-bottom: .25em
+  }
+}
+
+.purchase__evergreen-cards {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3em;
+  position: relative
+}
+
+@media only screen and (max-width: 1200px) {
+  .purchase__evergreen-cards {
+    align-items: center;
+    flex-direction: column;
+    padding: 2em 0 1.313em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__evergreen-cards {
+    align-items: center;
+    flex-direction: column;
+    padding: 1em 0 0
+  }
+}
+
+.purchase__evergreen-container {
+  margin: auto;
+  max-width: 1200px;
+  padding-bottom: 10.25em
+}
+
+@media only screen and (max-width: 1200px) {
+  .purchase__evergreen-container {
+    min-height: 84.25em;
+    padding: 0 1em 8em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__evergreen-container {
+    padding-bottom: 4.5em
+  }
+}
+
+.purchase__evergreen-heading {
+  color: #fff
+}
+
+.purchase__evergreen-card-read-more {
+  color: #ff5252;
+  font-weight: 600
+}
+
+.purchase__evergreen-sub-title {
+  color: #fff
+}
+
+.purchase__lead-in {
+  background-color: #fafafa;
+  margin: auto;
+  padding: 3em 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .purchase__lead-in {
+    padding: 3em .5em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__lead-in {
+    padding: 1.625em
+  }
+}
+
+.purchase__lead-in--dark {
+  background-color: #313c47
+}
+
+.purchase__lead-in-button {
+  padding-left: 4em
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__lead-in-button {
+    align-self: center;
+    padding: 0
+  }
+}
+
+.purchase__lead-in-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 71em
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__lead-in-container {
+    flex-direction: column
+  }
+}
+
+.purchase__lead-in-container--constrained {
+  max-width: 56.25em
+}
+
+.purchase__lead-in-text-container {
+  max-width: 30em;
+  padding-right: 1.5rem
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__lead-in-text-container {
+    padding: 0 0 .75em
+  }
+}
+
+.purchase__lead-in-text {
+  display: inline
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__lead-in-text {
+    display: block;
+    font-weight: normal;
+    line-height: 1.75em;
+    text-align: center
+  }
+}
+
+.purchase__lead-in-text--light {
+  color: #fff
+}
+
+.purchase__page-heading-h2 {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 2.125rem;
+  line-height: 1.176em
+}
+
+.purchase__page-heading-h2--months {
+  padding: .5rem 0
+}
+
+.purchase__page-heading-h3 {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__page-heading-h3--top {
+    padding-top: 1em
+  }
+}
+
+.purchase__process {
+  position: relative
+}
+
+.purchase__process-block {
+  max-width: 32.813em;
+  padding-bottom: 2em;
+  position: relative
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__process-block {
+    padding: 1em 0 0
+  }
+}
+
+.purchase__process-block-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 1200px) {
+  .purchase__process-block-container {
+    align-items: center;
+    flex-direction: column
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__process-block-heading-3 {
+    font-weight: 700;
+    line-height: 1.75em
+  }
+}
+
+.purchase__process-container {
+  padding-top: 3em
+}
+
+@media only screen and (max-width: 1200px) {
+  .purchase__process-container {
+    padding: 3em 1em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__process-container {
+    padding: 3em 1em 0
+  }
+}
+
+.purchase__process-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 12.75em
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__process-content {
+    flex-direction: row;
+    min-height: 0
+  }
+}
+
+.purchase__process-content-body {
+  max-width: 32.813em;
+  padding-bottom: .5em
+}
+
+.purchase__process-content-title {
+  padding-bottom: .5rem
+}
+
+.purchase__process-sub-title {
+  max-width: 31em
+}
+
+.purchase__process-svg {
+  height: 4.875em;
+  width: 4.875em
+}
+
+.purchase__process-svg .svg {
+  fill: #5e6a77
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__process-svg {
+    height: 2.5em;
+    padding-right: 1em;
+    width: 2.5em
+  }
+}
+
+.purchase__programs {
+  background-color: #626f7c;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  width: 100%
+}
+
+.purchase__programs--top {
+  background-color: #fafafa;
+  height: 30em;
+  left: 50%;
+  position: absolute;
+  right: 50%;
+  top: -8.75em;
+  transform: translate(-50%, -50%) skewY(-4.2deg);
+  width: 200%;
+  z-index: 1
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__programs--top {
+    top: -11.25em
+  }
+}
+
+.purchase__programs-background-1 {
+  background-color: #5f6b77;
+  bottom: -26.375em;
+  height: 38.625em;
+  left: 70.375em;
+  position: absolute;
+  right: 6%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 6.25em
+}
+
+.purchase__programs-background-2 {
+  background-color: #5c6874;
+  bottom: 9.875em;
+  height: 12.5em;
+  position: absolute;
+  right: 5%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 28.75em
+}
+
+.purchase__programs-background-3 {
+  background: #4c5764;
+  height: 400%;
+  position: absolute;
+  right: -78.375em;
+  top: -48.125em;
+  transform: rotate(-45deg);
+  width: 50%
+}
+
+.purchase__programs-button-container {
+  padding-bottom: 5.5em;
+  position: relative;
+  text-align: center;
+  z-index: 2
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__programs-button-container {
+    padding-bottom: 2.5em
+  }
+}
+
+.purchase__programs-card {
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex: 1 1 40%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1em;
+  max-width: 17.625em;
+  min-height: 14.875em;
+  padding: 1.5em 1.5em 1em;
+  z-index: 2
+}
+
+.purchase__programs-card:hover {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px 0 rgba(0, 0, 0, 0.2)
+}
+
+@media only screen and (max-width: 1200px) {
+  .purchase__programs-card {
+    margin-bottom: 1em;
+    max-width: none;
+    min-height: 100%
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__programs-card {
+    margin: 0 0 1em;
+    min-height: 100%;
+    padding: 1em
+  }
+}
+
+.purchase__programs-card-all-programs {
+  align-items: center;
+  justify-content: center;
+  width: 100%
+}
+
+.purchase__programs-card-more {
+  color: #ff5252;
+  font-weight: 700
+}
+
+.purchase__programs-cards {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4em
+}
+
+@media only screen and (max-width: 1200px) {
+  .purchase__programs-cards {
+    align-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__programs-cards {
+    flex-direction: column;
+    padding-bottom: 2em
+  }
+  .purchase__programs-cards:last-of-type {
+    padding-bottom: 2em
+  }
+}
+
+.purchase__programs-cards--last {
+  padding-bottom: .625em
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__programs-cards--last {
+    padding-bottom: .25em
+  }
+}
+
+.purchase__programs-card-text {
+  flex: 1 0 auto;
+  max-width: 20em;
+  padding-bottom: .75em
+}
+
+@media only screen and (max-width: 1200px) {
+  .purchase__programs-card-text {
+    max-width: none
+  }
+}
+
+.purchase__programs-card-title {
+  padding-bottom: .5rem
+}
+
+.purchase__programs-container {
+  margin: 12.625em auto 0;
+  max-width: 1200px;
+  position: relative
+}
+
+@media only screen and (max-width: 1200px) {
+  .purchase__programs-container {
+    padding: 0 1em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .purchase__programs-container {
+    margin-top: 8.25em
+  }
+}
+
+.quick-tip {
+  background-color: #fffce6;
+  border: 2px solid #faca36;
+  border-radius: .25em;
+  display: flex;
+  padding: 1.125em 1.625em
+}
+
+.quick-tip__icon-container {
+  align-items: center;
+  display: flex;
+  margin-right: 1.625em
+}
+
+.quick-tip__header {
+  display: flex;
+  justify-content: space-between
+}
+
+.quick-tip__heading {
+  font-weight: bold
+}
+
+.quick-tip__icon path {
+  fill: #faca36
+}
+
+.radio-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0
+}
+
+@media only screen and (max-width: 768px) {
+  .radio-list {
+    flex-direction: column
+  }
+}
+
+.radio-list--paired {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr
+}
+
+.radio-list--paired .radio-list__radio+.radio-list__radio {
+  margin: 0
+}
+
+@media only screen and (max-width: 768px) {
+  .radio-list--paired {
+    display: inherit
+  }
+}
+
+.radio-list__check-circle {
+  margin-right: .625rem
+}
+
+.radio-list__check-circle .svg-circle {
+  fill: #fff;
+  stroke: #9e9e9e
+}
+
+.radio-list__check-circle .svg-check {
+  stroke: rgba(255, 255, 255, 0)
+}
+
+.radio-list__radio {
+  flex: 1 1 auto;
+  list-style: none
+}
+
+.radio-list__radio+.radio-list__radio {
+  margin-left: 1.5rem
+}
+
+@media only screen and (max-width: 768px) {
+  .radio-list__radio+.radio-list__radio {
+    margin: 1rem 0 0
+  }
+}
+
+.radio-list__radio-button {
+  opacity: 0;
+  position: absolute;
+  z-index: 1000
+}
+
+.radio-list__radio-button:checked+.radio-list__radio-label {
+  background: #1878cc;
+  border: 0;
+  color: #fff
+}
+
+.radio-list__radio-button:checked+.radio-list__radio-label .radio-list__check-circle .svg-circle {
+  fill: #fff;
+  stroke: #fff
+}
+
+.radio-list__radio-button:checked+.radio-list__radio-label .radio-list__check-circle .svg-check {
+  stroke: #1878cc
+}
+
+.radio-list__radio-label {
+  align-items: center;
+  background: #fff;
+  border: thin solid #bdbdbd;
+  border-radius: 0.25em;
+  cursor: pointer;
+  display: flex;
+  font-weight: 600;
+  padding: .5rem 1rem;
+  white-space: nowrap
+}
+
+.radio-list__radio-label:hover {
+  border-color: #1878cc
+}
+
+.ratings-bar {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0
+}
+
+.ratings-bar__constrainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+  position: relative;
+  transition: all .2s ease-in-out
+}
+
+.ratings-bar__section-content {
+  align-items: center;
+  display: flex
+}
+
+@media only screen and (max-width: 768px) {
+  .ratings-bar__section-content {
+    justify-content: space-between;
+    max-width: 20em;
+    width: 100%
+  }
+}
+
+.ratings-bar__section {
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex: 1 1 33%;
+  justify-content: center;
+  padding: .3em 1em
+}
+
+.ratings-bar__section:last-of-type {
+  border: 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .ratings-bar__section {
+    padding: .3em .5em
+  }
+  .ratings-bar__section:last-of-type {
+    display: none
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .ratings-bar__section:nth-of-type(2) {
+    display: none
+  }
+}
+
+.ratings-bar__logo {
+  padding-right: 1em
+}
+
+@media only screen and (max-width: 768px) {
+  .ratings-bar__logo {
+    display: none
+  }
+}
+
+.ratings-bar__stars {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1em;
+  width: 7.5em
+}
+
+@media only screen and (max-width: 768px) {
+  .ratings-bar__stars {
+    padding-right: 0
+  }
+}
+
+.ratings-bar__star {
+  height: 1em;
+  width: 1em
+}
+
+.ratings-bar__star--half .star {
+  fill: #fff
+}
+
+.ratings-bar__star--half .star--half {
+  display: block;
+  fill: #faca36
+}
+
+.ratings-bar__star--full .star {
+  fill: #faca36
+}
+
+.ratings-bar__star--full .star--half {
+  display: none
+}
+
+.ratings-bar__rating {
+  font: normal 600 0.875em / 1.5em "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.87);
+  padding-right: 1em
+}
+
+@media only screen and (max-width: 768px) {
+  .ratings-bar__rating {
+    padding-right: 0
+  }
+}
+
+.ratings-bar__link {
+  font: normal 600 0.875em / 1.5em "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #757575;
+  text-decoration: underline;
+  white-space: nowrap
+}
+
+.recommended-articles {
+  background-color: #eee
+}
+
+.recommended-articles__article {
+  border-bottom: 1px solid #bdbdbd;
+  display: flex;
+  justify-content: space-between;
+  max-width: 35em;
+  padding: 1em 0;
+  width: 100%
+}
+
+@media only screen and (max-width: 1200px) {
+  .recommended-articles__article {
+    padding: 1.5em 0
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .recommended-articles__article {
+    flex-direction: column;
+    max-width: 100%
+  }
+}
+
+.recommended-articles__article-teaser-image {
+  display: block;
+  height: auto;
+  margin-left: 1.5em;
+  width: 11.25rem
+}
+
+@media only screen and (max-width: 768px) {
+  .recommended-articles__article-teaser-image {
+    margin-bottom: 1em;
+    margin-left: 0;
+    width: auto
+  }
+}
+
+.recommended-articles__article-teaser-image-link {
+  display: inline-block
+}
+
+.recommended-articles__article-title {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em;
+  color: rgba(0, 0, 0, 0.87);
+  max-width: 22rem
+}
+
+@media only screen and (max-width: 768px) {
+  .recommended-articles__article-title {
+    align-self: center;
+    max-width: 100%;
+    order: 99
+  }
+}
+
+.recommended-articles__articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 1200px) {
+  .recommended-articles__articles {
+    align-items: center;
+    flex-direction: column
+  }
+}
+
+.recommended-articles__container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 6em 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .recommended-articles__container {
+    padding: 6em 1em
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .recommended-articles__container {
+    padding: 3em 1em
+  }
+}
+
+.recommended-articles__title {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1.7em;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
+  padding-bottom: .5rem
+}
+
+@media only screen and (max-width: 1200px) {
+  .recommended-articles__title {
+    max-width: 35rem
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .recommended-articles__title {
+    max-width: 100%
+  }
+}
+
+.refinance__evergreen {
+  background: linear-gradient(45deg, #4f79c5 0%, #c33fb4 70%, #c33fb4 100%);
+  overflow: hidden;
+  padding: 6em 0 0;
+  position: relative
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__evergreen {
+    padding-top: 3em
+  }
+}
+
+.refinance__evergreen--bottom {
+  background-color: #fafafa;
+  bottom: -40em;
+  height: 30em;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  right: 50%;
+  transform: translate(-50%, -50%) skewY(-4deg);
+  width: 200%
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__evergreen--bottom {
+    bottom: -43em
+  }
+}
+
+.refinance__evergreen-background-1 {
+  background-color: #fff;
+  bottom: 0;
+  box-shadow: 2em 0 1.125em;
+  height: 200%;
+  left: -5.625em;
+  opacity: .05;
+  position: absolute;
+  transform: skewX(225deg);
+  width: 200%
+}
+
+.refinance__evergreen-background-2 {
+  bottom: 16em;
+  background: linear-gradient(130deg, #815fbc 0%, #a94db7 100%);
+  height: 17.813em;
+  left: 44.875em;
+  opacity: .95;
+  position: absolute;
+  transform: rotate(315deg);
+  width: 40.125em
+}
+
+.refinance__evergreen-background-3 {
+  background-color: #a84cb8;
+  bottom: 5.875em;
+  height: 8.438em;
+  left: 74.125em;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 56.25em
+}
+
+.refinance__evergreen-card {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: .25em;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  margin-right: 1.313em;
+  max-width: 24em;
+  overflow: hidden
+}
+
+.refinance__evergreen-card:hover {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px 0 rgba(0, 0, 0, 0.2)
+}
+
+.refinance__evergreen-card:last-of-type {
+  margin-right: 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .refinance__evergreen-card {
+    margin-right: 0
+  }
+}
+
+.refinance__evergreen-card-image {
+  display: block;
+  min-height: 1em;
+  width: 100%
+}
+
+.refinance__evergreen-card-text {
+  padding-bottom: 1em
+}
+
+.refinance__evergreen-card-text-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__evergreen-card-text-content {
+    padding: 1.125em 1em 1em
+  }
+}
+
+.refinance__evergreen-card-title {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em;
+  padding-bottom: .5em
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__evergreen-card-title {
+    padding-bottom: .25em
+  }
+}
+
+.refinance__evergreen-cards {
+  display: flex;
+  padding-top: 3em
+}
+
+@media only screen and (max-width: 1200px) {
+  .refinance__evergreen-cards {
+    align-items: center;
+    flex-direction: column;
+    padding: 2em 0 1.313em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__evergreen-cards {
+    padding: 1em 0 0
+  }
+}
+
+.refinance__evergreen-container {
+  margin: auto;
+  max-width: 1200px;
+  padding-bottom: 10.25em
+}
+
+@media only screen and (max-width: 1200px) {
+  .refinance__evergreen-container {
+    min-height: 84.25em;
+    padding-bottom: 8em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__evergreen-container {
+    padding-bottom: 4.5em
+  }
+}
+
+.refinance__evergreen-content {
+  position: relative
+}
+
+@media only screen and (max-width: 1200px) {
+  .refinance__evergreen-content {
+    padding: 0 1em
+  }
+}
+
+.refinance__evergreen-heading {
+  color: #fff
+}
+
+@media only screen and (max-width: 1200px) {
+  .refinance__evergreen-heading {
+    padding-left: .5em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__evergreen-heading {
+    padding-left: 0
+  }
+}
+
+.refinance__evergreen-card-read-more {
+  color: #ff5252;
+  font-weight: 600
+}
+
+.refinance__lead-in {
+  margin: auto;
+  padding: 3em 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .refinance__lead-in {
+    padding: 3em .5em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__lead-in {
+    padding: 1.625em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__lead-in-button {
+    align-self: center
+  }
+}
+
+.refinance__lead-in-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__lead-in-container {
+    flex-direction: column
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__lead-in-text {
+    font-weight: normal;
+    line-height: 1.75em;
+    text-align: center
+  }
+}
+
+.refinance__lead-in-text-container {
+  padding-right: 2em
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__lead-in-text-container {
+    padding: 0 0 .75em
+  }
+}
+
+.refinance__process {
+  position: relative;
+  z-index: 2
+}
+
+.refinance__process-block {
+  max-width: 13em
+}
+
+.refinance__process-block-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 4em 0 5em
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__process-block-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1.5em 0 4.125em
+  }
+}
+
+.refinance__process-blocks {
+  display: flex;
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__process-blocks {
+    flex-direction: column;
+    max-height: 16.5em
+  }
+}
+
+.refinance__process-container {
+  margin: 0 auto 6em;
+  max-width: 1200px;
+  padding: 3em 1em 0
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__process-container {
+    margin-bottom: 0
+  }
+}
+
+.refinance__process-content-body {
+  margin-bottom: 1.5em
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__process-content-body {
+    margin-bottom: .5em
+  }
+}
+
+.refinance__process-content-title {
+  margin: 0 0 1em
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__process-content-title {
+    margin: 0 0 .75em
+  }
+}
+
+.refinance__process-icon {
+  position: relative;
+  width: 100%
+}
+
+.refinance__process-icon::before {
+  border-top: 2px dashed #bdbdbd;
+  content: '';
+  height: 0;
+  left: 6.875em;
+  position: absolute;
+  top: 45%;
+  width: 96%
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__process-icon {
+    height: 100%;
+    margin-bottom: 1em
+  }
+  .refinance__process-icon::before {
+    display: none
+  }
+}
+
+.refinance__process-icon--last::before {
+  content: none
+}
+
+.refinance__process-icon-container {
+  flex: 1 1 auto;
+  padding: 0 7em 0 2em
+}
+
+.refinance__process-icon-container:first-child {
+  padding-left: 0
+}
+
+.refinance__process-icon-container:last-child {
+  padding-right: 0
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__process-icon-container {
+    height: 100%;
+    margin: 0 0 1em;
+    padding: 0
+  }
+}
+
+.refinance__process-icons {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3.125em
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__process-icons {
+    flex-direction: column;
+    padding-bottom: 0
+  }
+}
+
+.refinance__process-sub-title {
+  max-width: 31em
+}
+
+.refinance__process-svg {
+  height: 100%;
+  width: 100%
+}
+
+.refinance__process-svg .svg {
+  fill: #3baf2f
+}
+
+.refinance__process-svg-container {
+  height: 4.875em;
+  width: 4.875em
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__process-svg-container {
+    height: 2.625em;
+    width: 2.625em
+  }
+}
+
+.refinance__programs {
+  background-color: #626f7c;
+  color: #fff;
+  margin-top: -16.125em;
+  overflow: hidden;
+  position: relative;
+  width: 100%
+}
+
+.refinance__programs--top {
+  background-color: #fafafa;
+  height: 30em;
+  left: 50%;
+  position: absolute;
+  right: 50%;
+  top: 0;
+  transform: translate(-50%, -50%) skewY(-4.2deg);
+  width: 200%;
+  z-index: 1
+}
+
+.refinance__programs-background-1 {
+  background-color: #5f6b77;
+  bottom: -26.375em;
+  height: 38.625em;
+  left: 70.375em;
+  position: absolute;
+  right: 6%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 6.25em
+}
+
+.refinance__programs-background-2 {
+  background-color: #5c6874;
+  bottom: 9.875em;
+  height: 12.5em;
+  position: absolute;
+  right: 5%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 28.75em
+}
+
+.refinance__programs-background-3 {
+  background: #4c5764;
+  height: 400%;
+  position: absolute;
+  right: -78.375em;
+  top: -48.125em;
+  transform: rotate(-45deg);
+  width: 50%
+}
+
+.refinance__programs-card {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  align-items: center;
+  background-color: #fff;
+  border-radius: .25em;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  margin: .75em 0;
+  max-width: 20em;
+  min-height: 10.75em;
+  padding: 2em;
+  z-index: 2
+}
+
+.refinance__programs-card:hover {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px 0 rgba(0, 0, 0, 0.2)
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__programs-card {
+    align-items: flex-start;
+    max-width: 20em;
+    min-height: 0;
+    padding: 1em
+  }
+}
+
+.refinance__programs-card-more {
+  color: #ff5252;
+  font-weight: 700;
+  line-height: .75em
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__programs-card-more {
+    padding-top: 1em
+  }
+}
+
+.refinance__programs-card-text {
+  flex: 1 0 auto;
+  max-width: 20em
+}
+
+.refinance__programs-card-title {
+  padding-bottom: .75em
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__programs-card-title {
+    padding-bottom: .25em
+  }
+}
+
+.refinance__programs-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2.25em 0 4em
+}
+
+@media only screen and (max-width: 1200px) {
+  .refinance__programs-cards {
+    justify-content: space-around;
+    padding: 2.25em 0 4em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__programs-cards {
+    padding: .75em 0 2.125em
+  }
+}
+
+.refinance__programs-container {
+  margin: 21.313em auto 0;
+  max-width: 1200px;
+  position: relative
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__programs-container {
+    margin-top: 18.75em
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .refinance__programs-content {
+    padding: 0 1em
+  }
+}
+
+.refinance__programs-view-more-card {
+  align-items: center;
+  flex: 1 1 auto;
+  justify-content: center;
+  max-width: 20em;
+  width: 100%
+}
+
+.refinance__programs-view-more-card-title {
+  align-items: center;
+  color: #ff5252;
+  display: flex;
+  font-weight: 600;
+  padding-bottom: 0;
+  text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__programs-view-more-card-title {
+    max-width: 625em;
+    padding: 0;
+    text-align: left
+  }
+}
+
+.refinance__programs-view-more-card-arrow {
+  padding-left: .75em
+}
+
+.refinance__programs-view-more-card-arrow .chevron {
+  stroke: #ff5252
+}
+
+.refinance__page-heading-h3 {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em
+}
+
+@media only screen and (max-width: 768px) {
+  .refinance__page-heading-h3--title {
+    padding-top: 1em
+  }
+}
+
+.related-articles__article {
+  color: rgba(0, 0, 0, 0.87);
+  display: block;
+  flex: 1 0;
+  margin-right: 1.5em
+}
+
+.related-articles__article:last-child {
+  margin-right: 0
+}
+
+@media only screen and (max-width: 1024px) {
+  .related-articles__article {
+    margin: 0 auto 1.5em;
+    max-width: 33em;
+    width: 100%
+  }
+  .related-articles__article:last-child {
+    margin: 0 auto
+  }
+}
+
+.related-articles__articles {
+  display: flex
+}
+
+@media only screen and (max-width: 1024px) {
+  .related-articles__articles {
+    flex-direction: column
+  }
+}
+
+.related-articles__container {
+  margin: 4em auto;
+  max-width: 1200px;
+  padding: 0 1em
+}
+
+@media only screen and (max-width: 1024px) {
+  .related-articles__container {
+    margin: 3em auto
+  }
+}
+
+.related-articles__heading {
+  margin-bottom: 1.25em
+}
+
+.related-articles__image {
+  display: block;
+  width: 100%
+}
+
+.related-articles__title {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em;
+  max-width: 100%;
+  padding: 1em
+}
+
+.reverse-mortgage__evergreen {
+  background: linear-gradient(45deg, #4f79c5 0%, #c33fb4 70%, #c33fb4 100%);
+  overflow: hidden;
+  padding-top: 6em;
+  position: relative
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__evergreen {
+    padding-top: 3em
+  }
+}
+
+.reverse-mortgage__evergreen--bottom {
+  background-color: #fafafa;
+  bottom: -40em;
+  height: 30em;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  right: 50%;
+  transform: translate(-50%, -50%) skewY(-4deg);
+  width: 200%
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__evergreen--bottom {
+    bottom: -43em
+  }
+}
+
+.reverse-mortgage__evergreen-background-1 {
+  background-color: #fff;
+  bottom: 0;
+  box-shadow: 2em 0 1.125em;
+  height: 200%;
+  left: -5.625em;
+  opacity: .05;
+  position: absolute;
+  transform: skewX(225deg);
+  width: 200%
+}
+
+.reverse-mortgage__evergreen-background-2 {
+  background: linear-gradient(130deg, #815fbc 0%, #a94db7 100%);
+  bottom: 16em;
+  height: 17.813em;
+  left: 44.875em;
+  opacity: .95;
+  position: absolute;
+  transform: rotate(315deg);
+  width: 40.125em
+}
+
+.reverse-mortgage__evergreen-background-3 {
+  background-color: #a84cb8;
+  bottom: 5.875em;
+  height: 8.438em;
+  left: 74.125em;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 56.25em
+}
+
+.reverse-mortgage__evergreen-card {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: .25em;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  margin-right: 1.313em;
+  max-width: 24em;
+  overflow: hidden
+}
+
+.reverse-mortgage__evergreen-card:hover {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px 0 rgba(0, 0, 0, 0.2)
+}
+
+.reverse-mortgage__evergreen-card:last-of-type {
+  margin-right: 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-mortgage__evergreen-card {
+    margin-right: 0
+  }
+}
+
+.reverse-mortgage__evergreen-card-image {
+  display: block;
+  min-height: 1em;
+  width: 100%
+}
+
+.reverse-mortgage__evergreen-card-read-more {
+  color: #ff5252;
+  font-weight: 600
+}
+
+.reverse-mortgage__evergreen-card-text {
+  flex: 1 1 auto;
+  padding-bottom: 1em
+}
+
+.reverse-mortgage__evergreen-card-text-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1.5em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__evergreen-card-text-content {
+    padding: 1.125em 1em 1em
+  }
+}
+
+.reverse-mortgage__evergreen-card-title {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em;
+  padding-bottom: .5em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__evergreen-card-title {
+    padding-bottom: .25em
+  }
+}
+
+.reverse-mortgage__evergreen-cards {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3em;
+  position: relative
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-mortgage__evergreen-cards {
+    align-items: center;
+    flex-direction: column;
+    padding: 2em 0 1.313em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__evergreen-cards {
+    align-items: center;
+    flex-direction: column;
+    padding: 1em 0 0
+  }
+}
+
+.reverse-mortgage__evergreen-container {
+  margin: auto;
+  max-width: 1200px;
+  padding-bottom: 10.25em
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-mortgage__evergreen-container {
+    min-height: 84.25em;
+    padding-bottom: 8em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__evergreen-container {
+    padding: 0 1em 4.5em
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-mortgage__evergreen-heading {
+    padding-left: .5em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__evergreen-heading {
+    padding-left: 0
+  }
+}
+
+.reverse-mortgage__evergreen-sub-title {
+  color: #fff
+}
+
+.reverse-mortgage__evergreen-title {
+  color: #fff;
+  padding-bottom: 2em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__evergreen-title {
+    padding-bottom: 1.5em
+  }
+}
+
+.reverse-mortgage__lead-in {
+  background-color: #313c47;
+  margin: auto;
+  padding: 3em 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-mortgage__lead-in {
+    padding: 3em .5em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__lead-in {
+    padding: 1.5em 1em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__lead-in-button {
+    align-self: center
+  }
+}
+
+.reverse-mortgage__lead-in-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 54.625em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__lead-in-container {
+    flex-direction: column
+  }
+}
+
+.reverse-mortgage__lead-in-text-container {
+  padding-right: 3.5em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__lead-in-text-container {
+    padding: 0 0 .75em
+  }
+}
+
+.reverse-mortgage__lead-in-text {
+  display: inline
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__lead-in-text {
+    display: block;
+    font-weight: normal;
+    line-height: 1.75em;
+    text-align: center
+  }
+}
+
+.reverse-mortgage__lead-in-text--light {
+  color: #fff
+}
+
+.reverse-mortgage__loan-requirements-background-1 {
+  background-color: #5e6a77;
+  bottom: -.813em;
+  height: 7.438em;
+  left: 7.25em;
+  position: absolute;
+  transform: rotate(-45deg);
+  width: 15.563em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__loan-requirements-background-1 {
+    bottom: 1.938em;
+    height: 5.375em;
+    left: -6.063em
+  }
+}
+
+.reverse-mortgage__loan-requirements-background-2 {
+  background-color: #5c6874;
+  bottom: -2.25em;
+  height: 2.938em;
+  left: 19.75em;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 15.75em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__loan-requirements-background-2 {
+    bottom: 2px;
+    left: 5.75em
+  }
+}
+
+.reverse-mortgage__loan-requirements-background-3 {
+  background-color: #5e6a77;
+  height: 12em;
+  position: absolute;
+  right: -1.25em;
+  top: -8.188em;
+  transform: rotate(-45deg);
+  width: 12.125em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__loan-requirements-background-3 {
+    right: -5.188em
+  }
+}
+
+.reverse-mortgage__loan-requirements-background-4 {
+  background-color: #5c6874;
+  height: 8.25em;
+  position: absolute;
+  right: -6.688em;
+  top: .938em;
+  transform: rotate(-45deg);
+  width: 10.625em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__loan-requirements-background-4 {
+    right: -8em;
+    top: -1.75em
+  }
+}
+
+.reverse-mortgage__loan-requirements-background-container {
+  height: 100%;
+  left: -.313em;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+  z-index: 1
+}
+
+.reverse-mortgage__loan-requirements-card {
+  background-color: #616e7b;
+  box-sizing: border-box;
+  color: #fff;
+  margin-bottom: 1em;
+  min-height: 19.5em;
+  overflow: hidden;
+  padding: 3em;
+  position: relative;
+  width: 36em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__loan-requirements-card {
+    min-height: 0;
+    padding: 1em
+  }
+}
+
+.reverse-mortgage__loan-requirements-card-list {
+  margin: 0
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__loan-requirements-card-list {
+    padding-left: 1.813em
+  }
+}
+
+.reverse-mortgage__loan-requirements-card-list-heading {
+  padding-bottom: 1em
+}
+
+.reverse-mortgage__loan-requirements-card-title {
+  font-size: 1.5em;
+  line-height: 1.333em;
+  padding-bottom: .625em;
+  padding-right: 1em
+}
+
+.reverse-mortgage__loan-requirements-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-mortgage__loan-requirements-cards {
+    justify-content: space-around
+  }
+}
+
+.reverse-mortgage__loan-requirements-container {
+  padding: 0 1em 5em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__loan-requirements-container {
+    padding: 1em 1em 2em
+  }
+}
+
+.reverse-mortgage__loan-requirements-list-item {
+  padding-bottom: 1em
+}
+
+.reverse-mortgage__loan-requirements-list-item:last-of-type {
+  padding-bottom: 0
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__loan-requirements-list-item {
+    padding-right: 1em
+  }
+}
+
+.reverse-mortgage__loan-requirements-text-container {
+  position: relative;
+  z-index: 2
+}
+
+.reverse-mortgage__loan-requirements-title {
+  padding-bottom: 3.625em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__loan-requirements-title {
+    padding-bottom: 2em
+  }
+}
+
+.reverse-mortgage__process {
+  position: relative
+}
+
+.reverse-mortgage__process-block {
+  max-width: 21em;
+  padding-top: 4em;
+  position: relative
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__process-block {
+    padding-top: 1.5em
+  }
+}
+
+.reverse-mortgage__process-block-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 4em
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-mortgage__process-block-container {
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 1.5em
+  }
+}
+
+.reverse-mortgage__process-block-heading-3 {
+  font-size: 1.5em;
+  line-height: 1.333em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__process-block-heading-3 {
+    font-size: 1em;
+    font-weight: 700
+  }
+}
+
+.reverse-mortgage__process-container {
+  padding-bottom: 5.75em;
+  padding-top: 6em
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-mortgage__process-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 6em 1em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__process-container {
+    padding: 3em 1em 2em
+  }
+}
+
+.reverse-mortgage__process-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 24em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__process-content {
+    flex-direction: row;
+    min-height: 0
+  }
+}
+
+.reverse-mortgage__process-content-title {
+  padding-bottom: .875em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__process-content-title {
+    padding-bottom: .5em
+  }
+}
+
+.reverse-mortgage__process-disclaimer {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: .75em;
+  line-height: 1.125em
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-mortgage__process-disclaimer {
+    align-self: center;
+    max-width: 27.75em
+  }
+}
+
+.reverse-mortgage__process-icon {
+  padding-bottom: 2.625em
+}
+
+.reverse-mortgage__process-sub-title {
+  max-width: 32em
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-mortgage__process-sub-title {
+    align-self: baseline
+  }
+}
+
+.reverse-mortgage__process-svg {
+  height: 4.875em;
+  width: 4.875em
+}
+
+.reverse-mortgage__process-svg .svg {
+  fill: #3baf2f
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__process-svg {
+    height: 2.5em;
+    padding-right: 1em;
+    width: 2.5em
+  }
+}
+
+.reverse-mortgage__process-title {
+  padding-bottom: 2em
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-mortgage__process-title {
+    align-self: baseline
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__process-title {
+    padding-bottom: 1.25em
+  }
+}
+
+.reverse-mortgage__page-heading-h3 {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em
+}
+
+@media only screen and (max-width: 768px) {
+  .reverse-mortgage__page-heading-h3--top {
+    padding-top: 1em
+  }
+}
+
+.reviews {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 3em 0 5em
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews {
+    padding: 1em 1em 2em
+  }
+}
+
+.reviews__button {
+  max-width: 24em;
+  width: 100%
+}
+
+.reviews__card {
+  box-sizing: border-box;
+  height: 19.75em;
+  margin-bottom: 1.5em;
+  margin-right: 1px;
+  overflow: hidden;
+  padding: 1.5em;
+  position: relative;
+  width: 24em
+}
+
+.reviews__card:hover {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px 0 rgba(0, 0, 0, 0.2)
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews__card {
+    margin-bottom: 1em
+  }
+}
+
+.reviews__card--dummy-spacer {
+  background-color: transparent;
+  box-shadow: 0;
+  height: 0;
+  margin: 0;
+  min-height: 0;
+  padding: 0;
+  visibility: hidden;
+  width: 24em
+}
+
+.reviews__card--expanded {
+  height: 100%;
+  min-height: 19.75em
+}
+
+.reviews__card--expanded .reviews__card-read-more::before {
+  display: none
+}
+
+.reviews__card--expanded .reviews__card-read-more-text::after {
+  content: 'LESS'
+}
+
+.reviews__card-rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  max-height: 15.75em;
+  pointer-events: none
+}
+
+.reviews__card-rating-brand {
+  padding: 1.5em;
+  position: absolute;
+  right: 0;
+  top: 0
+}
+
+.reviews__card-rating-star {
+  height: 1em;
+  width: 1em
+}
+
+.reviews__card-rating-star .star--half {
+  display: none
+}
+
+.reviews__card-rating-star--empty .star {
+  fill: #757575
+}
+
+.reviews__card-rating-star--full .star {
+  fill: #faca36
+}
+
+.reviews__card-rating-star--half .star {
+  fill: rgba(255, 255, 255, 0)
+}
+
+.reviews__card-rating-star--half .star--half {
+  display: block;
+  fill: #faca36
+}
+
+.reviews__card-rating-stars {
+  display: flex;
+  justify-content: space-between;
+  min-width: 6.875em
+}
+
+.reviews__card-read-more {
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  position: absolute;
+  width: 100%
+}
+
+.reviews__card-read-more::before {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  content: '';
+  display: block;
+  height: 6.25em
+}
+
+.reviews__card-read-more-reviewer {
+  background: #fff;
+  font-weight: 700;
+  padding: 1em 0;
+  text-align: center
+}
+
+.reviews__card-read-more-reviewer-date {
+  font: normal 400 14px / 20px "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.54)
+}
+
+.reviews__card-read-more-text {
+  align-items: center;
+  background: #fff;
+  border-top: 1px solid #bdbdbd;
+  color: #ff5252;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  height: 4em;
+  justify-content: center
+}
+
+.reviews__card-read-more-text::after {
+  content: 'MORE'
+}
+
+.reviews__card-review {
+  margin-bottom: 8em;
+  pointer-events: none
+}
+
+.reviews__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 1.25em
+}
+
+@media only screen and (max-width: 1200px) {
+  .reviews__cards {
+    justify-content: space-around
+  }
+}
+
+.reviews__header-card {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #a84cb8;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1.625em;
+  margin-right: 1px;
+  min-height: 16.5em;
+  min-width: 24em;
+  padding: 2em
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews__header-card {
+    margin-bottom: 1em;
+    min-height: 11.75em;
+    min-width: 0;
+    padding: 1em;
+    width: 24em
+  }
+}
+
+.reviews__header-card-rating {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  min-width: 18em
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews__header-card-rating {
+    margin-bottom: 0;
+    min-width: 10em
+  }
+}
+
+.reviews__header-card-reviews-quantity {
+  color: #ff5252;
+  font-weight: 700
+}
+
+.reviews__header-card-star {
+  height: 2em;
+  width: 2em
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews__header-card-star {
+    height: 1em;
+    width: 1em
+  }
+}
+
+.reviews__header-card-star--full .star {
+  fill: #faca36
+}
+
+.reviews__header-card-star--full .star--half {
+  display: none
+}
+
+.reviews__header-card-star--half .star {
+  fill: #fff
+}
+
+.reviews__header-card-star--half .star--half {
+  display: block;
+  fill: #faca36
+}
+
+.reviews__header-card-stars {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-width: 13.375em
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews__header-card-stars {
+    min-width: 7em
+  }
+}
+
+.reviews__header-card-stars-quantity {
+  font-size: 2.125em;
+  line-height: 1.176em
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews__header-card-stars-quantity {
+    font-size: 1.5em;
+    line-height: 1.333em
+  }
+}
+
+.reviews__link {
+  color: #ff5252;
+  font-weight: 700
+}
+
+.reviews__load-more {
+  display: flex;
+  justify-content: center
+}
+
+.reviews__page-header {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 2.8125rem;
+  font-weight: normal;
+  line-height: 1.067em;
+  padding: .625em .5em;
+  text-align: center
+}
+
+.reviews__phone-link {
+  color: inherit;
+  cursor: default;
+  pointer-events: none;
+  white-space: nowrap
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews__phone-link {
+    color: #ff5252;
+    cursor: auto;
+    font-weight: 700;
+    pointer-events: auto
+  }
+}
+
+.reviews__text {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews__text {
+    margin-bottom: 1.5em
+  }
+}
+
+.reviews__text-call-to-action {
+  max-width: 38.375em;
+  text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews__text-call-to-action {
+    text-align: left
+  }
+}
+
+.reviews__text-title {
+  font-size: 1.5em;
+  line-height: 1.333em;
+  margin-bottom: 1em
+}
+
+@media only screen and (max-width: 768px) {
+  .save-for-later__header-button {
+    border: 0;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 0;
+    width: 100%
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0.7em)
+  }
+}
+
+.scroll-prompt {
+  cursor: pointer;
+  display: block;
+  padding: 0;
+  text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+  .scroll-prompt {
+    background-color: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    padding: .25em 0 .75em;
+    position: fixed;
+    width: 100%
+  }
+}
+
+.scroll-prompt--hidden {
+  opacity: 0
+}
+
+.scroll-prompt__message {
+  animation: 2s both scroll infinite;
+  margin: 0;
+  padding: 0;
+  pointer-events: none
+}
+
+.scroll-prompt__message-arrow {
+  color: #fff;
+  transform: rotate(90deg) scale(2)
+}
+
+.search-results-list {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.search-results-list__item {
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5em
+}
+
+.search-results-list__item-fragment-matching-query {
+  background-color: #a5daa033;
+  line-height: 1.25em
+}
+
+.search-results-list__item-match-content {
+  line-height: 1.25em;
+  margin-bottom: .5em
+}
+
+.search-results-list__item-title-link {
+  color: #3baf2f;
+  line-height: 1em;
+  margin-bottom: .75em
+}
+
+.search-results-list__item-uri {
+  color: #9e9e9e;
+  font-size: .8em
+}
+
+.section-title {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 2.125rem;
+  line-height: 1.176em;
+  position: relative;
+  padding-bottom: 2.25rem
+}
+
+.section-title::after {
+  border-bottom: 2px solid #bdbdbd;
+  bottom: -.75rem;
+  content: '';
+  display: block;
+  height: 0;
+  left: 0;
+  position: relative;
+  width: 6rem
+}
+
+@media only screen and (max-width: 768px) {
+  .section-title {
+    font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 1.333em;
+    padding-bottom: 1.25rem
+  }
+}
+
+.section-title--h1 {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 2.8125rem;
+  font-weight: normal;
+  line-height: 1.067em;
+  padding-bottom: 2.25rem
+}
+
+@media only screen and (max-width: 768px) {
+  .section-title--h1 {
+    font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    font-size: 2.125rem;
+    line-height: 1.176em;
+    padding-bottom: 1.75rem
+  }
+}
+
+.section-title--no-divider {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 2.125rem;
+  line-height: 1.176em
+}
+
+.section-title--transparent {
+  position: relative
+}
+
+.section-title--transparent::after {
+  opacity: 0.34;
+  border-bottom: 2px solid #fff;
+  bottom: -.75rem;
+  content: '';
+  display: block;
+  height: 0;
+  left: 0;
+  position: relative;
+  width: 6rem
+}
+
+.section-title--white {
+  color: #fff
+}
+
+.short-form__container {
+  padding: 1em
+}
+
+.short-form__container--bordered {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 0.25em
+}
+
+.short-form__title {
+  margin-bottom: 1em
+}
+
+.short-form__title--centered {
+  text-align: center
+}
+
+.short-form__title-container {
+  margin-bottom: 1em
+}
+
+.slider {
+  padding-top: .5em
+}
+
+.slider--short {
+  padding-top: .75rem
+}
+
+.slider__formatted-result {
+  font-size: 2.25em;
+  text-align: center
+}
+
+.slider__formatted-results {
+  font: normal 400 2.125rem / 2.5rem "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal;
+  align-items: center;
+  display: flex;
+  justify-content: center
+}
+
+.slider__formatter-results-divider {
+  font: normal 400 0.875rem / 1.25rem "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.54);
+  margin: 0 1.5rem
+}
+
+.slider__value {
+  flex: 1 1 auto;
+  margin: .5em 0 1em
+}
+
+.slider__value--actual {
+  text-align: center
+}
+
+.slider__value--center {
+  text-align: center
+}
+
+.slider__values {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between
+}
+
+.slider__values::after {
+  clear: both;
+  content: '';
+  display: block
+}
+
+.slider__value-ends {
+  font: normal 400 0.75rem / 1.125rem "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.54);
+  flex: 1 1 auto
+}
+
+.slider__value-ends:first-of-type {
+  text-align: left
+}
+
+.slider__value-ends:last-of-type {
+  text-align: right
+}
+
+.sms__card {
+  background: #e0e0e0;
+  padding: 0
+}
+
+@media only screen and (max-width: 768px) {
+  .sms__card {
+    border-radius: 0
+  }
+}
+
+.sms__container {
+  margin: 1.5em 0
+}
+
+@media only screen and (max-width: 768px) {
+  .sms__container {
+    margin: 0
+  }
+}
+
+.sms__form {
+  margin-top: 1em;
+  padding: 0 1em
+}
+
+.sms__header {
+  background: #5e6a77;
+  border-top-left-radius: 0.25em;
+  border-top-right-radius: 0.25em;
+  color: #fff;
+  font-weight: bold;
+  padding: .5em 1em
+}
+
+.sms__message {
+  border: 1px solid transparent;
+  border-radius: .5em;
+  margin: .25em 0;
+  padding: 0 .5em;
+  width: 75%
+}
+
+@media only screen and (max-width: 768px) {
+  .sms__message {
+    width: 80%
+  }
+}
+
+.sms__message--incoming {
+  align-self: flex-start;
+  background-color: #5e6a77;
+  color: #fff
+}
+
+.sms__message--outgoing {
+  align-self: flex-end;
+  background-color: #fff
+}
+
+.sms__messages {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5em;
+  min-height: 15em;
+  padding: 0 1em
+}
+
+.sms__timestamp {
+  align-self: center;
+  color: #5e6a77;
+  font-size: .8em
+}
+
+.social-sharing__buttons {
+  align-items: center;
+  border-bottom: 1px solid #313c47;
+  border-top: 1px solid #313c47;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  margin: 1.5em 0;
+  padding: .5em 0;
+  width: 600px
+}
+
+@media only screen and (max-width: 768px) {
+  .social-sharing__buttons {
+    width: 100%
+  }
+}
+
+.social-sharing__icon {
+  align-self: center
+}
+
+.social-sharing__link {
+  display: flex;
+  margin: 0 .75em
+}
+
+.social-sharing__text {
+  color: #616161;
+  margin: 0 .75em
+}
+
+.spanish__container {
+  margin: auto;
+  max-width: 33em;
+  padding: 3em 0
+}
+
+@media only screen and (max-width: 768px) {
+  .spanish__container {
+    padding: 1em
+  }
+}
+
+.spanish__copy {
+  margin: 1.5em 0
+}
+
+.spanish__page-header {
+  font: normal 400 2.8125rem / 1.067em "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #fff;
+  margin: 0;
+  padding: .625em .5em;
+  text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+  .spanish__page-header {
+    font: normal 400 2.125rem / 1.176em "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+    font-stretch: normal;
+    letter-spacing: normal
+  }
+}
+
+.spanish__list {
+  margin: 1.5em 0;
+  padding-left: 2em
+}
+
+.state-tinymce__link {
+  color: #f44336
+}
+
+.state-tinymce__link:hover {
+  border-bottom: 2px solid #f44336
+}
+
+.state-tinymce__list {
+  margin: 1.4em 0;
+  padding-left: 1.9em
+}
+
+.state-tinymce__list-item {
+  padding: 0 .3em
+}
+
+.state-tinymce__list-item p {
+  margin: 0
+}
+
+@media only screen and (max-width: 768px) {
+  .state-tinymce__image {
+    width: 100%
+  }
+}
+
+.state-tinymce__paragraph {
+  margin-bottom: 1.5em
+}
+
+.submit-content {
+  background-color: #e0e0e0;
+  margin-bottom: 3rem;
+  padding: 2rem 1rem
+}
+
+@media only screen and (max-width: 768px) {
+  .submit-content {
+    margin-bottom: 0
+  }
+}
+
+.submit-content--inner {
+  margin: 0 auto;
+  max-width: 600px
+}
+
+.submit-content__logos {
+  align-items: center;
+  display: flex
+}
+
+@media only screen and (max-width: 768px) {
+  .submit-content__logos {
+    flex-direction: column
+  }
+}
+
+.submit-content__logos-img {
+  box-sizing: border-box;
+  display: block;
+  height: auto;
+  padding-right: 2rem;
+  width: 25%
+}
+
+.submit-content__logos-img:last-of-type {
+  padding-right: 0
+}
+
+@media only screen and (max-width: 768px) {
+  .submit-content__logos-img {
+    margin-bottom: 1.5rem;
+    max-width: 9.375rem;
+    padding-right: 0;
+    width: 100%
+  }
+  .submit-content__logos-img:last-of-type {
+    margin-bottom: 0
+  }
+}
+
+.submit-content__title {
+  font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.333em;
+  margin-bottom: 1.5rem;
+  text-align: center
+}
+
+.submit-step__card {
+  margin: 0 auto;
+  max-width: 31.25em
+}
+
+.submit-step__card-copy {
+  color: rgba(0, 0, 0, 0.54)
+}
+
+.submit-step__card-title {
+  margin: 0;
+  padding-bottom: .25em;
+  text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+  .submit-step__card-title {
+    text-align: left
+  }
+}
+
+.submit-step__overlay {
+  position: relative
+}
+
+.submit-step__overlay::after {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  content: '';
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 18.75em
+}
+
+.submit-step__overlay::before {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 18.75em;
+  z-index: 1
+}
+
+@media only screen and (max-width: 768px) {
+  .submit-step__overlay::after {
+    display: none
+  }
+  .submit-step__overlay::before {
+    display: none
+  }
+}
+
+.submit-step__sub-title {
+  margin: 1em auto 0;
+  max-width: 31.875em;
+  text-align: left
+}
+
+.term-and-conditions-navigation {
+  align-self: center;
+  display: flex;
+  flex-direction: row
+}
+
+.term-and-conditions-navigation__item {
+  border-left: 1px solid;
+  line-height: 1;
+  padding: 0 1.25rem
+}
+
+.term-and-conditions-navigation__item:first-child {
+  border-left: 0 none
+}
+
+@media only screen and (min-width: 1024px) {
+  .term-and-conditions-navigation__item:first-child {
+    padding-left: 0
+  }
+}
+
+.term-and-conditions-navigation__link {
+  color: #fff;
+  text-decoration: underline
+}
+
+.thank-you__available {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 7em;
+  padding-top: 7.5em
+}
+
+@media only screen and (max-width: 768px) {
+  .thank-you__available {
+    padding: 2.313em 1em 2.5em
+  }
+}
+
+.thank-you__available-title {
+  font-size: 2.125em;
+  line-height: 1.176em;
+  padding-bottom: .75em;
+  text-align: center
+}
+
+@media only screen and (max-width: 768px) {
+  .thank-you__available-title {
+    font-size: 1.5em;
+    font-weight: normal;
+    line-height: 1.333em;
+    text-align: left
+  }
+}
+
+.thank-you__available-call-back {
+  padding-bottom: 2.125em
+}
+
+@media only screen and (max-width: 768px) {
+  .thank-you__available-call-back {
+    padding-bottom: 2.25em
+  }
+}
+
+.thank-you__available-container {
+  margin: 0 auto;
+  max-width: 36.625em
+}
+
+.thank-you__available-hour {
+  display: flex;
+  padding-bottom: .5em
+}
+
+@media only screen and (max-width: 768px) {
+  .thank-you__available-hour {
+    flex-direction: column
+  }
+}
+
+.thank-you__available-hours {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: .825em
+}
+
+@media only screen and (max-width: 768px) {
+  .thank-you__available-hours {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-bottom: 1em
+  }
+}
+
+.thank-you__available-hour-day {
+  font-weight: 700;
+  min-width: 13.875em
+}
+
+@media only screen and (max-width: 768px) {
+  .thank-you__available-hour-day {
+    padding-bottom: .5em
+  }
+}
+
+.thank-you__available-icon img {
+  height: 5em;
+  width: 5em
+}
+
+@media only screen and (max-width: 768px) {
+  .thank-you__available-icon img {
+    height: 2.5em;
+    width: 2.5em
+  }
+}
+
+.thank-you__available-icons {
+  border-top: 1px solid #bdbdbd;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 95%;
+  opacity: .6;
+  padding-top: 2em
+}
+
+@media only screen and (max-width: 768px) {
+  .thank-you__available-icons {
+    max-width: none
+  }
+}
+
+.thank-you-heading {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 9.375em 0
+}
+
+@media only screen and (max-width: 768px) {
+  .thank-you-heading {
+    align-items: flex-start;
+    padding: 3.125em 1em;
+    text-align: left
+  }
+}
+
+.thank-you-heading__sub-heading {
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Roboto", "Droid Sans", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 1.5em;
+  line-height: 1.33em
+}
+
+@media only screen and (max-width: 768px) {
+  .thank-you-heading__sub-heading {
+    font-size: 1em;
+    line-height: 1.75em
+  }
+}
+
+.thank-you-heading__title {
+  font-size: 2.813em;
+  line-height: 1.067em;
+  padding-bottom: .5em;
+  z-index: 1
+}
+
+@media only screen and (max-width: 768px) {
+  .thank-you-heading__title {
+    font-size: 2.125em;
+    line-height: 1.176em
+  }
+}
+
+.toggle-form__field {
+  flex: 1 0 auto;
+  text-align: center
+}
+
+.toggle-form__field--hidden {
+  display: none
+}
+
+.toggle-form__toggler {
+  display: flex;
+  font-weight: 600;
+  margin-bottom: .5em;
+  max-height: 3em
+}
+
+.toggle-form__toggler--hidden {
+  display: none
+}
+
+.toggle-form__toggler-label {
+  background-color: #4c5764;
+  border: 2px solid #4c5764;
+  border-radius: 0.25em;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  padding: .5em 0;
+  text-transform: uppercase;
+  user-select: none;
+  width: 100%
+}
+
+.toggle-form__toggler-label--light {
+  background-color: #fff;
+  border-color: #fff;
+  color: #000
+}
+
+.toggle-form__toggler-label--light .toggle-form__toggler-label-svg .svg {
+  fill: #3baf2f
+}
+
+.toggle-form__toggler-label--first {
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  border-top-right-radius: 0
+}
+
+.toggle-form__toggler-label--last {
+  border-bottom-left-radius: 0;
+  border-left: 0;
+  border-top-left-radius: 0
+}
+
+.toggle-form__toggler-label-contents {
+  align-items: center;
+  display: flex;
+  justify-content: center
+}
+
+.toggle-form__toggler-label-svg {
+  width: 1.375em
+}
+
+.toggle-form__toggler-label-svg .svg {
+  fill: #fff
+}
+
+.toggle-form__toggler-label-svg-container {
+  display: flex;
+  height: 1.25em;
+  margin-right: .5em;
+  width: 1.375em
+}
+
+.toggle-form__toggler-radio {
+  left: -9999px;
+  position: absolute
+}
+
+.toggle-form__toggler-radio:not(:checked)~.toggle-form__toggler-label {
+  background-color: transparent;
+  border-color: #4c5764;
+  border-left: 2px solid #4c5764;
+  color: rgba(0, 0, 0, 0.87)
+}
+
+.toggle-form__toggler-radio:not(:checked)~.toggle-form__toggler-label .toggle-form__toggler-label-svg {
+  display: none
+}
+
+.toggle-form__toggler-radio:not(:checked)~.toggle-form__toggler-label .toggle-form__toggler-label-svg-container {
+  border: 2px solid #757575;
+  border-radius: 50%;
+  height: 1em;
+  width: 1em
+}
+
+.toggle-form__toggler-radio:not(:checked)~.toggle-form__toggler-label--light {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: #fff;
+  color: #fff
+}
+
+.toggle-form__toggler-radio:not(:checked)~.toggle-form__toggler-label--light .toggle-form__toggler-label-svg {
+  display: none
+}
+
+.toggle-form__toggler-radio:not(:checked)~.toggle-form__toggler-label--light .toggle-form__toggler-label-svg-container {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 1em;
+  width: 1em
+}
+
+.tooltip::before {
+  color: #616161;
+  content: url(https://cdn.americanfinancing.net/assets/icons/ic-info-24-4561e9ce2b2c6a6e3fc51c34c078a30bb0205f68d489cc82eb8ce93fd5610aaa.svg);
+  font-size: 1.4em;
+  padding: 0 2px
+}
+
+.tooltip--small {
+  cursor: pointer
+}
+
+.tooltip--small::before {
+  padding: 0
+}
+
+.tippy-tooltip.afc-theme {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 4px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #616161;
+  border-radius: 0.25em;
+  text-align: left
+}
+
+.tippy-tooltip.afc-theme .tippy-backdrop {
+  background-color: #616161
+}
+
+.trust-pilot {
+  margin: 1em auto;
+  max-width: 1200px
+}
+
+@media only screen and (max-width: 1200px) {
+  .trust-pilot {
+    padding: 0 1em
+  }
+}
+
+.trust-pilot--no-padding {
+  padding: 0
+}
+
+.trust-pilot-widget {
+  padding-bottom: 3em;
+  padding-top: 1.325em
+}
+
+@media only screen and (max-width: 768px) {
+  .trust-pilot-widget {
+    padding-bottom: 1.75em
+  }
+}
+
+.youtube {
+  background-color: #000;
+  height: auto;
+  margin: 0 auto;
+  width: 100%
+}
+
+.youtube__video-iframe {
+  border-width: 0
+}
+
+.youtube__video-wrapper {
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 100%
+}
+
+.youtube__video-wrapper iframe, .youtube__video-wrapper img {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%
+}
+
+.youtube__video-wrapper--wide {
+  width: 101%
+}
+
+.amortization-table {
+  box-sizing: border-box;
+  height: 33.5em;
+  margin-bottom: 1.25em;
+  max-width: 1200px;
+  position: relative;
+  z-index: 0
+}
+
+.amortization-table .amortization-table__item:nth-child(n+11) {
+  display: none
+}
+
+@media only screen and (max-width: 1200px) {
+  .amortization-table {
+    border: 1px solid #e0e0e0;
+    height: 100%
+  }
+  .amortization-table::before {
+    background: linear-gradient(to left, #fff 10%, rgba(255, 255, 255, 0));
+    content: '';
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2.188em;
+    z-index: 1
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .amortization-table--end::before {
+    display: none
+  }
+}
+
+.amortization-table--show-all .amortization-table__item:nth-child(n+11) {
+  display: flex
+}
+
+.amortization-table__column {
+  float: left;
+  width: calc(100% * (1/5))
+}
+
+.amortization-table__column:last-child {
+  border-right: 0
+}
+
+@media only screen and (max-width: 1200px) {
+  .amortization-table__column {
+    width: 13.25em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .amortization-table__column {
+    width: 6.25em
+  }
+  .amortization-table__column:last-child {
+    width: 9.375em
+  }
+}
+
+.amortization-table__column--pinned {
+  height: 100%;
+  left: 0;
+  margin-left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: calc(100% * (1/6));
+  z-index: 2
+}
+
+@media only screen and (max-width: 1200px) {
+  .amortization-table__column--pinned {
+    background-color: #fafafa;
+    border-right: 1px solid #e0e0e0;
+    width: 6em
+  }
+}
+
+.amortization-table__column-header {
+  align-items: center;
+  background-color: #eee;
+  display: flex;
+  height: 3.5em;
+  padding-left: 1.5em
+}
+
+.amortization-table__container {
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  width: 100%
+}
+
+.amortization-table__item {
+  align-items: center;
+  display: flex;
+  height: 3em;
+  padding-left: 1.5em
+}
+
+.amortization-table__item:last-child {
+  border: 0
+}
+
+.amortization-table__item--border-every-other:nth-child(2n) {
+  border-bottom: 1px solid #e0e0e0
+}
+
+.amortization-table__item--border-every {
+  border-bottom: 1px solid #e0e0e0
+}
+
+@media only screen and (max-width: 1200px) {
+  .amortization-table__scroll-right {
+    animation: 1s ease alternate infinite scroll-right;
+    display: block;
+    height: 1.625em;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    width: 1.125em;
+    z-index: 1
+  }
+}
+
+.amortization-table__scroll-right-arrow {
+  display: none
+}
+
+@media only screen and (max-width: 1200px) {
+  .amortization-table__scroll-right-arrow {
+    display: block;
+    height: 1.625em;
+    width: auto
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .amortization-table__scroll-right-arrow--hide {
+    opacity: 0;
+    transition: opacity .5s ease
+  }
+}
+
+.amortization-table__show-more-button {
+  margin-top: 1.5em
+}
+
+.amortization-table__wrapper {
+  padding-left: calc(100% / 6);
+  width: 100%
+}
+
+@media only screen and (max-width: 1200px) {
+  .amortization-table__wrapper {
+    padding-left: 6em;
+    width: 72.25em
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .amortization-table__wrapper {
+    padding-left: 6em;
+    width: 40.375em
+  }
+}
+
+table {
+  margin: 2em auto;
+  margin-bottom: 4em;
+  width: 100%;
+  position: relative;
+}
+
+th {
+  background-color: #eee;
+  height: 3.5em;
+}
+
+td {
+  height: 3em;
+}

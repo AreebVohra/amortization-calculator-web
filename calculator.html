@@ -1,0 +1,166 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <div class="mortgage-calculator" data-controller="extra-payments">
+        <div class="mortgage-calculator__cards mortgage-calculator__cards--lesser-bottom-margin">
+            <div class="card mortgage-calculator__card">
+                <div class="mortgage-calculator__intro">
+                    Make extra payments each month, pay off your loan faster, and save thousands in overall interest.
+                    You
+                    will be
+                    surprised how fast the savings can add up by paying a bit more each month.
+                </div>
+                <div class="form">
+                    <div class="form__fields form__fields--horizontal form__fields--vertical-mobile">
+                        <div class="form__field form__field--vertical form__field--vertical-mobile">
+                            <label class="form__label-container form__label-container--pseudo-content" data-prepend="$"
+                                for="original-loan-amount">
+                                <input class="form__text-field" data-action="keyup->extra-payments#process"
+                                    data-behavior="input-masking-money" data-dollar-only="true" id="loan-amount"
+                                    oninput="getValues()" value="300000" name="original-loan-amount"
+                                    placeholder="Loan amount" type="tel">
+                                <div class="form__label-text-field">Original loan amount</div>
+                            </label>
+                        </div>
+                        <div class="form__field form__field--vertical form__field--vertical-mobile">
+                            <label class="form__label-container form__label-container--pseudo-content" data-append="%"
+                                for="original-interest-rate">
+                                <input class="form__text-field form__text-field--no-spinner"
+                                    data-action="keyup->extra-payments#process" id="interest-rate" value="4.125"
+                                    oninput="getValues()" name="original-interest-rate" placeholder="Interest rate"
+                                    step="any" type="number">
+                                <div class="form__label-text-field">Original interest rate</div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form__fields form__fields--horizontal form__fields--vertical-mobile">
+                        <div class="form__field form__field--vertical form__field--vertical-mobile">
+                            <label class="form__label-container" for="loan-start-date">
+                                <!------------------------------------------------------------------------------------>
+                                <input class="form__text-field form__text-field--no-spinner" name="loan-start-date"
+                                    placeholder="Start of original loan" id="start-date" oninput="setAddStartDate()" name="date" maxlength="7"
+                                    type="datable" data-datable="mmyyyy">
+                                <label class="form__label-text-field" for="loan-start-date">Start of original
+                                    loan</label>
+                            </label>
+                        </div>
+                        <div class="form__field form__field--vertical form__field--vertical-mobile">
+                            <label class="form__label-container form__label-container--pseudo-content"
+                                data-append="/years" for="original-loan-term">
+                                <input class="form__text-field form__text-field--no-spinner"
+                                    data-action="keyup->extra-payments#process" id="loan-length"
+                                    name="original-loan-term" oninput="getValues()" value="30"
+                                    placeholder="Length of loan" type="number">
+                                <label class="form__label-text-field">Original loan term</label>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form__fields form__fields--horizontal form__fields--vertical-mobile">
+                        <div class="form__field form__field--vertical form__field--vertical-mobile">
+                            <label class="form__label-container" for="additional-payment-start-date">
+                                <input class="form__text-field form__text-field--no-spinner"
+                                    id="additional-payment-start-date" name="additional-payment-start-date"
+                                    placeholder="Start of additional payment" type="datable" data-datable="mmyyyy">
+                                <label class=" form__label-text-field" for="additional-payment-start-date">Start of
+                                Additional Payment</label>
+                            </label>
+                        </div>
+                        <div class="form__field form__field--vertical form__field--vertical-mobile">
+                            <label class="form__label-container form__label-container--pseudo-content" data-prepend="$"
+                                for="additional-monthly-payment">
+                                <input class="form__text-field" data-action="keyup->extra-payments#process"
+                                    data-behavior="input-masking-money" data-dollar-only="true"
+                                    id="additional-monthly-payment" name="additional-monthly-payment"
+                                    placeholder="Additional principal payment" oninput="getValues()" type="tel"
+                                    value="155">
+                                <div class="form__label-text-field">Additional principal payment</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="card mortgage-calculator__card mortgage-calculator__card--zero-side-padding mortgage-calculator__card--spaced-out">
+                <div class="mortgage-calculator__call-to-action">
+                    <div class="mortgage-calculator__call-to-action-item">
+                        <h3 class="heading-3">Refinance your loan today!</h3>
+                    </div>
+                    <div class="mortgage-calculator__call-to-action-item mortgage-calculator__call-to-action-item--text-center"
+                        data-controller="modal">
+                        <a data-action="modal#show" class="button mortgage-calculator__call-to-action-button"
+                            href="#">FIND
+                            A LOAN PROGRAM</a>
+                        <div class="modal" data-action="click->modal#hide">
+                            <div class="modal__dialog modal__dialog--small">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mortgage-calculator__card-inner">
+                    <div class="mortgage-calculator__information-boxes">
+                        <div class="mortgage-calculator__information-box">
+                            Standard Payment
+                            <div class="mortgage-calculator__information-box-value">
+                                $<span id="standard-payment"></span>
+                                /mo
+                            </div>
+                        </div>
+                        <div class="mortgage-calculator__information-box">
+                            Payment with Additional Principal
+                            <div class="mortgage-calculator__information-box-value">
+                                $<span id="payment-with-additional-principal"></span>
+                                /mo
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mortgage-calculator__information-boxes">
+                        <div class="mortgage-calculator__information-box mortgage-calculator__information-box--green">
+                            Total Savings
+                            <div class="mortgage-calculator__information-box-value mortgage-calculator__information-box-value--green"
+                                id="total-savings">
+                            </div>
+                        </div>
+                        <div class="mortgage-calculator__information-box mortgage-calculator__information-box--green">
+                            Payoff Schedule
+                            <div id="payoff-schedule"
+                                class="mortgage-calculator__information-box-value mortgage-calculator__information-box-value--green">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!------------------------------------------------------------------------------------------------------------------------>
+        <div class="mortgage-calculator__amortization-data">
+            <div class="mortgage-calculator__amortization-information">
+                <div id="statement" class="mortgage-calculator__amortization-information-block">
+                </div>
+                <div class="mortgage-calculator__amortization-information-block">
+                    <div class="mortgage-calculator__amortization-information-toggle"><span
+                            class="mortgage-calculator__amortization-information-toggle-button"
+                            data-value="annually">ANNUALLY</span><span
+                            class="mortgage-calculator__amortization-information-toggle-button mortgage-calculator__amortization-information-toggle-button--active"
+                            data-value="monthly">MONTHLY</span>
+                    </div>
+                </div>
+            </div>
+            <!------------------------------------------------------------------------------------------------------------------------>
+            <div id="Result"></div>
+            <!------------------------------------------------------------------------------------------------------------------------>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="datable.min.js"></script>
+    <script>$.datable('init');</script>
+</body>
+
+</html>
